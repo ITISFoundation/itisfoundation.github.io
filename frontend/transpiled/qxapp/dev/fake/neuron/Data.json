@@ -1,0 +1,98 @@
+{
+  "className": "qxapp.dev.fake.neuron.Data",
+  "packageName": "qxapp.dev.fake.neuron",
+  "name": "Data",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 481,
+        "column": 3
+      }
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "itemList": {
+      "location": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 56,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "item": {
+      "location": {
+        "start": {
+          "line": 58,
+          "column": 4
+        },
+        "end": {
+          "line": 456,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "compare": {
+      "location": {
+        "start": {
+          "line": 458,
+          "column": 4
+        },
+        "end": {
+          "line": 466,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getItemList": {
+      "location": {
+        "start": {
+          "line": 468,
+          "column": 4
+        },
+        "end": {
+          "line": 474,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getItem": {
+      "location": {
+        "start": {
+          "line": 476,
+          "column": 4
+        },
+        "end": {
+          "line": 478,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

@@ -1,0 +1,377 @@
+{
+  "className": "qxapp.utils.Utils",
+  "packageName": "qxapp.utils",
+  "name": "Utils",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 31,
+        "column": 0
+      },
+      "end": {
+        "line": 307,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqxapp - the simcore frontend\n\nhttps:\n\nCopyright:\n2018 IT'IS Foundation, https:\n\nLicense:\nMIT: https:\n\nAuthors:\nOdei Maiz (odeimaiz)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "global window"
+        },
+        {
+          "name": "@description",
+          "body": "global document"
+        },
+        {
+          "name": "@description",
+          "body": "global XMLHttpRequest"
+        },
+        {
+          "name": "@description",
+          "body": "global Blob"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        },
+        {
+          "name": "@description",
+          "body": "Sandbox of static methods that do not fit in other utils classes."
+        }
+      ],
+      "@ignore": [
+        {
+          "name": "@ignore",
+          "body": "URL"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "uuidv4": {
+      "location": {
+        "start": {
+          "line": 35,
+          "column": 4
+        },
+        "end": {
+          "line": 38,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getLoaderUri": {
+      "location": {
+        "start": {
+          "line": 40,
+          "column": 4
+        },
+        "end": {
+          "line": 47,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "createLoadingIFrame": {
+      "location": {
+        "start": {
+          "line": 49,
+          "column": 4
+        },
+        "end": {
+          "line": 54,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "compareVersionNumbers": {
+      "location": {
+        "start": {
+          "line": 56,
+          "column": 4
+        },
+        "end": {
+          "line": 73,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "deepCloneObject": {
+      "location": {
+        "start": {
+          "line": 77,
+          "column": 4
+        },
+        "end": {
+          "line": 87,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "deep clone of nested objects"
+          },
+          {
+            "name": "@description",
+            "body": "https:"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getRandomColor": {
+      "location": {
+        "start": {
+          "line": 89,
+          "column": 4
+        },
+        "end": {
+          "line": 96,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getColorLuminance": {
+      "location": {
+        "start": {
+          "line": 98,
+          "column": 4
+        },
+        "end": {
+          "line": 102,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "bytesToSize": {
+      "location": {
+        "start": {
+          "line": 104,
+          "column": 4
+        },
+        "end": {
+          "line": 111,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "downloadLink": {
+      "location": {
+        "start": {
+          "line": 113,
+          "column": 4
+        },
+        "end": {
+          "line": 130,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "fileNameFromPresignedLink": {
+      "location": {
+        "start": {
+          "line": 132,
+          "column": 4
+        },
+        "end": {
+          "line": 139,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "capitalize": {
+      "location": {
+        "start": {
+          "line": 144,
+          "column": 4
+        },
+        "end": {
+          "line": 154,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Function that takes an indefinite number of strings as separated parameters, and concatenates them capitalizing the first letter."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "copyTextToClipboard": {
+      "location": {
+        "start": {
+          "line": 162,
+          "column": 4
+        },
+        "end": {
+          "line": 216,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Copies the given text to the clipboard"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "text {String} Text to be copied",
+            "paramName": "text",
+            "description": " Text to be copied",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} True if it was successful",
+            "type": "Boolean",
+            "description": " True if it was successful"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "cookie": {
+      "location": {
+        "start": {
+          "line": 218,
+          "column": 4
+        },
+        "end": {
+          "line": 244,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "parseURLFragment": {
+      "location": {
+        "start": {
+          "line": 246,
+          "column": 4
+        },
+        "end": {
+          "line": 272,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "getThumbnailFromUuid": {
+      "location": {
+        "start": {
+          "line": 274,
+          "column": 4
+        },
+        "end": {
+          "line": 279,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "getThumbnailFromString": {
+      "location": {
+        "start": {
+          "line": 281,
+          "column": 4
+        },
+        "end": {
+          "line": 281,
+          "column": 98
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "stringHash": {
+      "location": {
+        "start": {
+          "line": 283,
+          "column": 4
+        },
+        "end": {
+          "line": 297,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "isUrl": {
+      "location": {
+        "start": {
+          "line": 299,
+          "column": 4
+        },
+        "end": {
+          "line": 299,
+          "column": 151
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "setIdToWidget": {
+      "location": {
+        "start": {
+          "line": 301,
+          "column": 4
+        },
+        "end": {
+          "line": 305,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

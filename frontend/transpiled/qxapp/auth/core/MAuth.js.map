@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/auth/core/MAuth.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "members",
+    "createLinkButton",
+    "txt",
+    "cbk",
+    "ctx",
+    "atm",
+    "qxapp",
+    "ui",
+    "form",
+    "LinkButton",
+    "set",
+    "appearance",
+    "addListener",
+    "call",
+    "auth",
+    "core",
+    "MAuth"
+  ],
+  "mappings": ";;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uBAAhB,EAAyC;AAEvCC,IAAAA,OAAO,EAAC;AAEN;;;;AAIAC,MAAAA,gBAAgB,EAAE,0BAASC,GAAT,EAAcC,GAAd,EAAmBC,GAAnB,EAAwB;AAAA;;AACxC,YAAMC,GAAG,GAAG,IAAIC,KAAK,CAACC,EAAN,CAASC,IAAT,CAAcC,UAAlB,CAA6BP,GAA7B,EAAkCQ,GAAlC,CAAsC;AAChDC,UAAAA,UAAU,EAAE;AADoC,SAAtC,CAAZ;AAGAN,QAAAA,GAAG,CAACO,WAAJ,CAAgB,SAAhB,EAA2B;AAAA,iBAAMT,GAAG,CAACU,IAAJ,CAAS,KAAT,CAAN;AAAA,SAA3B,EAAiDT,GAAjD;AACA,eAAOC,GAAP;AACD;AAZK;AAF+B,GAAzC;AApBAC,EAAAA,KAAK,CAACQ,IAAN,CAAWC,IAAX,CAAgBC,KAAhB,CAAsBnB,aAAtB,GAAsCA,aAAtC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Pedro Crespo (pcrespov)\n\n************************************************************************ */\n\n/**\n * Helpers to build Auth Pages (temporary)\n*/\nqx.Mixin.define(\"qxapp.auth.core.MAuth\", {\n\n  members:{\n\n    /**\n     * Create link button\n     * TODO: create its own widget under qxapp.core.ui.LinkButton (extend Button with different apperance)\n     */\n    createLinkButton: function(txt, cbk, ctx) {\n      const atm = new qxapp.ui.form.LinkButton(txt).set({\n        appearance: \"link-button\"\n      });\n      atm.addListener(\"execute\", () => cbk.call(this), ctx);\n      return atm;\n    }\n  }\n});\n"
+  ]
+}

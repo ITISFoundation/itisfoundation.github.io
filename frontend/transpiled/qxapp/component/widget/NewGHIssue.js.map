@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/NewGHIssue.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "statics",
+    "getNewIssueUrl",
+    "temp",
+    "qxapp",
+    "component",
+    "widget",
+    "NewGHIssue",
+    "getTemplate",
+    "env",
+    "JSON",
+    "stringify",
+    "utils",
+    "LibVersions",
+    "getEnvLibs",
+    "body",
+    "encodeURIComponent",
+    "url"
+  ],
+  "mappings": ";;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;;;AASAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EAAqD;AACnDC,IAAAA,IAAI,EAAE,QAD6C;AAGnDC,IAAAA,OAAO,EAAE;AACPC,MAAAA,cAAc,EAAE,0BAAW;AACzB,YAAMC,IAAI,GAAGC,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,UAAvB,CAAkCC,WAAlC,EAAb;AACA,YAAIC,GAAG,GAAG,WAAV;AACAA,QAAAA,GAAG,IAAIC,IAAI,CAACC,SAAL,CAAeP,KAAK,CAACQ,KAAN,CAAYC,WAAZ,CAAwBC,UAAxB,EAAf,EAAqD,IAArD,EAA2D,CAA3D,CAAP;AACAL,QAAAA,GAAG,IAAI,OAAP;AACA,YAAMM,IAAI,GAAGC,kBAAkB,CAACb,IAAI,GAACM,GAAN,CAA/B;AACA,YAAIQ,GAAG,GAAG,6DAAV;AACAA,QAAAA,GAAG,IAAI,uCAAP;AACAA,QAAAA,GAAG,IAAI,4BAAP;AACAA,QAAAA,GAAG,IAAI,WAAWF,IAAlB;AACA,eAAOE,GAAP;AACD,OAZM;AAcPT,MAAAA,WAAW,EAAE,uBAAW;AACtB;AAiBD;AAhCM;AAH0C,GAArD;AA1BAJ,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,UAAvB,CAAkCV,aAAlC,GAAkDA,aAAlD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   const url = qxapp.component.widget.NewGHIssue.getNewIssueUrl();\n *   window.open(url);\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.widget.NewGHIssue\", {\n  type: \"static\",\n\n  statics: {\n    getNewIssueUrl: function() {\n      const temp = qxapp.component.widget.NewGHIssue.getTemplate();\n      let env = \"```json\\n\";\n      env += JSON.stringify(qxapp.utils.LibVersions.getEnvLibs(), null, 2);\n      env += \"\\n```\";\n      const body = encodeURIComponent(temp+env);\n      let url = \"https://github.com/ITISFoundation/osparc-simcore/issues/new\";\n      url += \"?labels=tester_review,UX_improvements\";\n      url += \"&projects=ITISFoundation/3\";\n      url += \"&body=\" + body;\n      return url;\n    },\n\n    getTemplate: function() {\n      return `\n## Long story short\n<!-- Please describe your review or bug you found. -->\n\n## Expected behaviour\n<!-- What is the behaviour you expect? -->\n\n## Actual behaviour\n<!-- What's actually happening? -->\n\n## Steps to reproduce\n<!-- Please describe steps to reproduce the issue. -->\n\nNote: your environment was attached but will not be displayed\n<!--\n## Your environment\n`;\n    }\n  }\n});\n"
+  ]
+}

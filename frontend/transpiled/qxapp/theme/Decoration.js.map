@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/theme/Decoration.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "osparc",
+    "theme",
+    "osparcdark",
+    "Decoration",
+    "decorations",
+    "decorator",
+    "ui",
+    "decoration",
+    "MSingleBorder",
+    "style",
+    "width",
+    "transitionProperty",
+    "transitionDuration",
+    "transitionTimingFunction",
+    "backgroundColor",
+    "include",
+    "radius",
+    "color",
+    "qxapp"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Tobias Oetiker (oetiker)\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\nqx.Theme.define(\"qxapp.theme.Decoration\", {\n  extend: osparc.theme.osparcdark.Decoration,\n\n  decorations: {\n\n    \"service-tree\": {\n      decorator: qx.ui.decoration.MSingleBorder,\n      style: {\n        width: 0\n      }\n    },\n\n    \"panelview\": {\n      style: {\n        transitionProperty: \"top\",\n        transitionDuration: \"0.2s\",\n        transitionTimingFunction: \"ease-in\"\n      }\n    },\n\n    \"panelview-content\": {\n      style: {\n        transitionProperty: \"height\",\n        transitionDuration: \"0.2s\",\n        transitionTimingFunction: \"ease-in\"\n      }\n    },\n\n    \"outputPortHighlighted\": {\n      style: {\n        backgroundColor: \"background-main-lighter+\"\n      }\n    },\n\n    \"window-small-cap\": {\n      include: \"service-window\",\n      style: {\n        width: 0,\n        radius: 3,\n        transitionProperty: \"opacity\",\n        transitionDuration: \"0.05s\",\n        transitionTimingFunction: \"ease-in\"\n      }\n    },\n\n    \"window-small-cap-maximized\": {\n      include: \"service-window-maximized\",\n      style: {\n        width: 0,\n        transitionProperty: \"opacity\",\n        transitionDuration: \"0.05s\",\n        transitionTimingFunction: \"ease-in\"\n      }\n    },\n\n    \"workbench-small-cap-captionbar\": {\n      style: {\n        width: 0\n      }\n    },\n\n    \"service-window\": {\n      include: \"window\",\n      style: {\n        radius: 3,\n        width: 1\n      }\n    },\n\n    \"service-window-maximized\": {\n      include: \"window\",\n      style: {\n        width: 1\n      }\n    },\n\n    \"sidepanel\": {\n      style: {\n        transitionProperty: [\"left\", \"width\"],\n        transitionDuration: \"0.2s\",\n        transitionTimingFunction: \"ease-in\"\n      }\n    },\n\n    \"link-button\": {},\n\n    \"service-browser\": {\n      style: {\n        color: \"material-button-background\"\n      }\n    },\n\n    \"flash\": {\n      style: {\n        radius: 3,\n        transitionProperty: \"top\",\n        transitionDuration: \"0.2s\",\n        transitionTimingFunction: \"ease-in\"\n      }\n    },\n\n    \"flash-badge\": {\n      style: {\n        radius: 5\n      }\n    },\n\n    \"flash-container-transitioned\": {\n      style: {\n        transitionProperty: \"height\",\n        transitionDuration: \"0.2s\",\n        transitionTimingFunction: \"ease-in\"\n      }\n    },\n\n    \"no-border\": {\n      style: {\n        width: 0\n      }\n    },\n\n    \"hint\": {\n      style: {\n        radius: 3\n      }\n    },\n\n    \"chip\": {\n      style: {\n        radius: 9\n      }\n    },\n\n    \"pb-listitem\": {\n      style: {\n        radius: 3\n      }\n    },\n\n    \"no-radius-button\": {\n      style: {\n        radius: 0\n      }\n    }\n  }\n});\n"
+  ]
+}

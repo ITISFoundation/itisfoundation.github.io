@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/inputs/NodeOutputListIconItem.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "form",
+    "ListItem",
+    "construct",
+    "layout",
+    "VBox",
+    "set",
+    "alignY",
+    "_setLayout",
+    "members",
+    "_createChildControlImpl",
+    "id",
+    "control",
+    "basic",
+    "Image",
+    "getIcon",
+    "alignX",
+    "_add",
+    "Label",
+    "getLabel",
+    "rich",
+    "allowGrowY",
+    "core",
+    "Spacer",
+    "qxapp",
+    "component",
+    "widget",
+    "inputs",
+    "NodeOutputListIconItem"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;;;;;;;;;;;;;;;;;;;;AA0BAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sDAAhB,EAAwE;AACtEC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,QADmD;AAGtEC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AAEA,UAAIC,MAAM,GAAG,IAAIX,EAAE,CAACO,EAAH,CAAMI,MAAN,CAAaC,IAAjB,GAAwBC,GAAxB,CAA4B;AACvCC,QAAAA,MAAM,EAAE;AAD+B,OAA5B,CAAb;;AAGA,WAAKC,UAAL,CAAgBJ,MAAhB;AACD,KAVqE;AAYtEK,IAAAA,OAAO,EAAE;AACP;AACAC,MAAAA,uBAAuB,EAAE,iCAASC,EAAT,EAAa;AACpC,YAAIC,OAAJ;;AACA,gBAAQD,EAAR;AACE,eAAK,MAAL;AACEC,YAAAA,OAAO,GAAG,IAAInB,EAAE,CAACO,EAAH,CAAMa,KAAN,CAAYC,KAAhB,CAAsB,KAAKC,OAAL,EAAtB,EAAsCT,GAAtC,CAA0C;AAClDU,cAAAA,MAAM,EAAE;AAD0C,aAA1C,CAAV;;AAGA,iBAAKC,IAAL,CAAUL,OAAV;;AACA;;AACF,eAAK,OAAL;AACEA,YAAAA,OAAO,GAAG,IAAInB,EAAE,CAACO,EAAH,CAAMa,KAAN,CAAYK,KAAhB,CAAsB,KAAKC,QAAL,EAAtB,EAAuCb,GAAvC,CAA2C;AACnDU,cAAAA,MAAM,EAAE,QAD2C;AAEnDI,cAAAA,IAAI,EAAE,IAF6C;AAGnDC,cAAAA,UAAU,EAAE;AAHuC,aAA3C,CAAV;;AAKA,iBAAKJ,IAAL,CAAU,IAAIxB,EAAE,CAACO,EAAH,CAAMsB,IAAN,CAAWC,MAAf,CAAsB,CAAtB,EAAyB,CAAzB,CAAV;;AACA,iBAAKN,IAAL,CAAUL,OAAV;;AACA,iBAAKK,IAAL,CAAU,IAAIxB,EAAE,CAACO,EAAH,CAAMsB,IAAN,CAAWC,MAAf,CAAsB,CAAtB,EAAyB,EAAzB,CAAV;;AACA;AAhBJ;;AAmBA,eAAOX,OAAO,2GAAyBD,EAAzB,CAAd;AACD;AAxBM;AAZ6D,GAAxE;AA3CAa,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,MAAvB,CAA8BC,sBAA9B,CAAqDhC,aAArD,GAAqEA,aAArE",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * ListItem used mainly by NodeOutputListIcon\n *\n *   It consists of an entry thumbnail and label.\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   list.setDelegate({\n *     createItem: () => new qxapp.component.widget.inputs.NodeOutputListIconItem(),\n *     bindItem: (c, item, id) => {\n *       c.bindDefaultProperties(item, id);\n *       c.bindProperty(\"key\", \"model\", null, item, id);\n *       c.bindProperty(\"thumbnail\", \"icon\", null, item, id);\n *       c.bindProperty(\"label\", \"label\", {\n *         converter: function(data) {\n *           return data;\n *         }\n *       }, item, id);\n *     },\n *   });\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.widget.inputs.NodeOutputListIconItem\", {\n  extend: qx.ui.form.ListItem,\n\n  construct: function() {\n    this.base(arguments);\n\n    let layout = new qx.ui.layout.VBox().set({\n      alignY: \"middle\"\n    });\n    this._setLayout(layout);\n  },\n\n  members: {\n    // overridden\n    _createChildControlImpl: function(id) {\n      let control;\n      switch (id) {\n        case \"icon\":\n          control = new qx.ui.basic.Image(this.getIcon()).set({\n            alignX: \"center\"\n          });\n          this._add(control);\n          break;\n        case \"label\":\n          control = new qx.ui.basic.Label(this.getLabel()).set({\n            alignX: \"center\",\n            rich: true,\n            allowGrowY: false\n          });\n          this._add(new qx.ui.core.Spacer(1, 5));\n          this._add(control);\n          this._add(new qx.ui.core.Spacer(1, 15));\n          break;\n      }\n\n      return control || this.base(arguments, id);\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/desktop/ServiceFilters.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "core",
+    "Widget",
+    "construct",
+    "groupId",
+    "_setLayout",
+    "layout",
+    "HBox",
+    "textFilter",
+    "__textFilter",
+    "qxapp",
+    "component",
+    "filter",
+    "TextFilter",
+    "utils",
+    "Utils",
+    "setIdToWidget",
+    "tagsFilter",
+    "__tagsFilter",
+    "TagsFilter",
+    "_add",
+    "members",
+    "reset",
+    "getTextFilter",
+    "getTagsFilter",
+    "desktop",
+    "ServiceFilters"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,8BAAhB,EAAgD;AAC9CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,MAD2B;AAG9CC,IAAAA,SAAS,EAAE,mBAASC,OAAT,EAAkB;AAC3B;;AACA,WAAKC,UAAL,CAAgB,IAAIZ,EAAE,CAACO,EAAH,CAAMM,MAAN,CAAaC,IAAjB,EAAhB;;AAEA,UAAMC,UAAU,GAAG,KAAKC,YAAL,GAAoB,IAAIC,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,UAA3B,CAAsC,MAAtC,EAA8CT,OAA9C,CAAvC;AACAM,MAAAA,KAAK,CAACI,KAAN,CAAYC,KAAZ,CAAkBC,aAAlB,CAAgCR,UAAhC,EAA4C,uBAA5C;AACA,UAAMS,UAAU,GAAG,KAAKC,YAAL,GAAoB,IAAIR,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBO,UAA3B,CAAsC,MAAtC,EAA8Cf,OAA9C,CAAvC;;AACA,WAAKgB,IAAL,CAAUZ,UAAV;;AACA,WAAKY,IAAL,CAAUH,UAAV;AACD,KAZ6C;AAc9CI,IAAAA,OAAO,EAAE;AACPZ,MAAAA,YAAY,EAAE,IADP;AAEPS,MAAAA,YAAY,EAAE,IAFP;;AAIP;;;AAGAI,MAAAA,KAAK,EAAE,iBAAW;AAChB,aAAKb,YAAL,CAAkBa,KAAlB;;AACA,aAAKJ,YAAL,CAAkBI,KAAlB;AACD,OAVM;AAYPC,MAAAA,aAAa,EAAE,yBAAW;AACxB,eAAO,KAAKd,YAAZ;AACD,OAdM;AAgBPe,MAAAA,aAAa,EAAE,yBAAW;AACxB,eAAO,KAAKN,YAAZ;AACD;AAlBM;AAdqC,GAAhD;AApBAR,EAAAA,KAAK,CAACe,OAAN,CAAcC,cAAd,CAA6B9B,aAA7B,GAA6CA,aAA7C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Widget that contains the service filters.\n */\nqx.Class.define(\"qxapp.desktop.ServiceFilters\", {\n  extend: qx.ui.core.Widget,\n\n  construct: function(groupId) {\n    this.base(arguments);\n    this._setLayout(new qx.ui.layout.HBox());\n\n    const textFilter = this.__textFilter = new qxapp.component.filter.TextFilter(\"text\", groupId);\n    qxapp.utils.Utils.setIdToWidget(textFilter, \"serviceFiltersTextFld\");\n    const tagsFilter = this.__tagsFilter = new qxapp.component.filter.TagsFilter(\"tags\", groupId);\n    this._add(textFilter);\n    this._add(tagsFilter);\n  },\n\n  members: {\n    __textFilter: null,\n    __tagsFilter: null,\n\n    /**\n     * Resets the text and active tags.\n     */\n    reset: function() {\n      this.__textFilter.reset();\n      this.__tagsFilter.reset();\n    },\n\n    getTextFilter: function() {\n      return this.__textFilter;\n    },\n\n    getTagsFilter: function() {\n      return this.__tagsFilter;\n    }\n  }\n});\n"
+  ]
+}

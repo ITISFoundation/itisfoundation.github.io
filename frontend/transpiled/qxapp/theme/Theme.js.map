@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/theme/Theme.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "meta",
+    "color",
+    "qxapp",
+    "theme",
+    "Color",
+    "decoration",
+    "Decoration",
+    "font",
+    "Font",
+    "icon",
+    "Oxygen",
+    "appearance",
+    "Appearance"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;AAiBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mBAAhB,EAAqC;AACnCC,IAAAA,IAAI,EACJ;AACEC,MAAAA,KAAK,EAAEC,KAAK,CAACC,KAAN,CAAYC,KADrB;AAEEC,MAAAA,UAAU,EAAEH,KAAK,CAACC,KAAN,CAAYG,UAF1B;AAGEC,MAAAA,IAAI,EAAEL,KAAK,CAACC,KAAN,CAAYK,IAHpB;AAIEC,MAAAA,IAAI,EAAEf,EAAE,CAACS,KAAH,CAASM,IAAT,CAAcC,MAJtB;AAKEC,MAAAA,UAAU,EAAET,KAAK,CAACC,KAAN,CAAYS;AAL1B;AAFmC,GAArC;AAjBAV,EAAAA,KAAK,CAACC,KAAN,CAAYL,KAAZ,CAAkBD,aAAlB,GAAkCA,aAAlC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Tobias Oetiker (oetiker)\n\n************************************************************************ */\n\nqx.Theme.define(\"qxapp.theme.Theme\", {\n  meta:\n  {\n    color: qxapp.theme.Color,\n    decoration: qxapp.theme.Decoration,\n    font: qxapp.theme.Font,\n    icon: qx.theme.icon.Oxygen,\n    appearance: qxapp.theme.Appearance\n  }\n});\n"
+  ]
+}

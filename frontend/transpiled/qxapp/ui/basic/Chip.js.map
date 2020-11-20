@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/ui/basic/Chip.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "basic",
+    "Atom",
+    "construct",
+    "label",
+    "icon",
+    "properties",
+    "appearance",
+    "init",
+    "refine",
+    "qxapp",
+    "Chip"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;AAOAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,qBAAhB,EAAuC;AACrCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,KAAN,CAAYC,IADiB;AAGrCC,IAAAA,SAAS,EAAE,mBAASC,KAAT,EAAgBC,IAAhB,EAAsB;AAC/B,8CAAqBD,KAArB,EAA4BC,IAA5B;AACD,KALoC;AAOrCC,IAAAA,UAAU,EAAE;AACVC,MAAAA,UAAU,EAAE;AACVC,QAAAA,IAAI,EAAE,MADI;AAEVC,QAAAA,MAAM,EAAE;AAFE;AADF;AAPyB,GAAvC;AAPAC,EAAAA,KAAK,CAACV,EAAN,CAASC,KAAT,CAAeU,IAAf,CAAoBf,aAApB,GAAoCA,aAApC",
+  "sourcesContent": [
+    "/*\n * oSPARC - The SIMCORE frontend - https://osparc.io\n * Copyright: 2019 IT'IS Foundation - https://itis.swiss\n * License: MIT - https://opensource.org/licenses/MIT\n * Authors: Ignacio Pascual (ignapas)\n */\n\nqx.Class.define(\"qxapp.ui.basic.Chip\", {\n  extend: qx.ui.basic.Atom,\n\n  construct: function(label, icon) {\n    this.base(arguments, label, icon);\n  },\n\n  properties: {\n    appearance: {\n      init: \"chip\",\n      refine: true\n    }\n  }\n});\n"
+  ]
+}

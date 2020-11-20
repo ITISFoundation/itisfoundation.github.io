@@ -1,0 +1,154 @@
+{
+  "className": "qxapp.dev.fake.srv.restapi.Authentication",
+  "packageName": "qxapp.dev.fake.srv.restapi",
+  "name": "Authentication",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 103,
+        "column": 3
+      }
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "REMEMBER": {
+      "location": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 5,
+          "column": 19
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "mockData": {
+      "location": {
+        "start": {
+          "line": 7,
+          "column": 4
+        },
+        "end": {
+          "line": 33,
+          "column": 6
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "createToken": {
+      "location": {
+        "start": {
+          "line": 35,
+          "column": 4
+        },
+        "end": {
+          "line": 37,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getUserIdFromToken": {
+      "location": {
+        "start": {
+          "line": 39,
+          "column": 4
+        },
+        "end": {
+          "line": 45,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "checkCredentials": {
+      "location": {
+        "start": {
+          "line": 47,
+          "column": 4
+        },
+        "end": {
+          "line": 53,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "decodeAuthHeader": {
+      "location": {
+        "start": {
+          "line": 59,
+          "column": 4
+        },
+        "end": {
+          "line": 74,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets {email, password} from header\nproduced by qx.io.request.authentication.Basic"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "parseLoginParameters": {
+      "location": {
+        "start": {
+          "line": 81,
+          "column": 4
+        },
+        "end": {
+          "line": 93,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Parse {email:, password:} object extracting\nparameters from body"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "defer": {
+    "location": {
+      "start": {
+        "line": 96,
+        "column": 9
+      },
+      "end": {
+        "line": 101,
+        "column": 3
+      }
+    }
+  },
+  "descendants": []
+}

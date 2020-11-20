@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/metadata/ServiceInfoWindow.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "window",
+    "Window",
+    "construct",
+    "metadata",
+    "tr",
+    "name",
+    "windowWidth",
+    "windowHeight",
+    "set",
+    "layout",
+    "Grow",
+    "contentPadding",
+    "showMinimize",
+    "resizable",
+    "modal",
+    "width",
+    "height",
+    "serviceDetails",
+    "qxapp",
+    "component",
+    "ServiceInfo",
+    "scroll",
+    "container",
+    "Scroll",
+    "add",
+    "properties",
+    "appearance",
+    "refine",
+    "init",
+    "ServiceInfoWindow"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;AAQA;;;;;;;;;;;;;AAcAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4CAAhB,EAA8D;AAC5DC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,MAAN,CAAaC,MADuC;;AAG5D;;;AAGAC,IAAAA,SAAS,EAAE,mBAASC,QAAT,EAAmB;AAC5B,iDAAqB,KAAKC,EAAL,CAAQ,qBAAR,IAAiC,KAAjC,GAAyCD,QAAQ,CAACE,IAAvE;AAEA,UAAMC,WAAW,GAAG,GAApB;AACA,UAAMC,YAAY,GAAG,GAArB;AACA,WAAKC,GAAL,CAAS;AACPC,QAAAA,MAAM,EAAE,IAAIjB,EAAE,CAACO,EAAH,CAAMU,MAAN,CAAaC,IAAjB,EADD;AAEPC,QAAAA,cAAc,EAAE,EAFT;AAGPC,QAAAA,YAAY,EAAE,KAHP;AAIPC,QAAAA,SAAS,EAAE,IAJJ;AAKPC,QAAAA,KAAK,EAAE,IALA;AAMPC,QAAAA,KAAK,EAAET,WANA;AAOPU,QAAAA,MAAM,EAAET;AAPD,OAAT;AAUA,UAAMU,cAAc,GAAG,IAAIC,KAAK,CAACC,SAAN,CAAgBhB,QAAhB,CAAyBiB,WAA7B,CAAyCjB,QAAzC,CAAvB;AACA,UAAMkB,MAAM,GAAG,IAAI7B,EAAE,CAACO,EAAH,CAAMuB,SAAN,CAAgBC,MAApB,EAAf;AACAF,MAAAA,MAAM,CAACG,GAAP,CAAWP,cAAX;AACA,WAAKO,GAAL,CAASH,MAAT;AACD,KAzB2D;AA2B5DI,IAAAA,UAAU,EAAE;AACVC,MAAAA,UAAU,EAAE;AACVC,QAAAA,MAAM,EAAE,IADE;AAEVC,QAAAA,IAAI,EAAE;AAFI;AADF;AA3BgD,GAA9D;AAtBAV,EAAAA,KAAK,CAACC,SAAN,CAAgBhB,QAAhB,CAAyB0B,iBAAzB,CAA2ClC,aAA3C,GAA2DA,aAA3D",
+  "sourcesContent": [
+    "/*\n * oSPARC - The SIMCORE frontend - https://osparc.io\n * Copyright: 2019 IT'IS Foundation - https://itis.swiss\n * License: MIT - https://opensource.org/licenses/MIT\n * Authors: Ignacio Pascual (ignapas)\n *          Odei Maiz (odeimaiz)\n */\n\n/**\n * Window that contains the ServiceInfo of the given service metadata.\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   const win = new qxapp.component.metadata.ServiceInfoWindow(service);\n *   win.center();\n *   win.open();\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.metadata.ServiceInfoWindow\", {\n  extend: qx.ui.window.Window,\n\n  /**\n    * @param metadata {Object} Service metadata\n    */\n  construct: function(metadata) {\n    this.base(arguments, this.tr(\"Service information\") + \" · \" + metadata.name);\n\n    const windowWidth = 700;\n    const windowHeight = 800;\n    this.set({\n      layout: new qx.ui.layout.Grow(),\n      contentPadding: 10,\n      showMinimize: false,\n      resizable: true,\n      modal: true,\n      width: windowWidth,\n      height: windowHeight\n    });\n\n    const serviceDetails = new qxapp.component.metadata.ServiceInfo(metadata);\n    const scroll = new qx.ui.container.Scroll();\n    scroll.add(serviceDetails);\n    this.add(scroll);\n  },\n\n  properties: {\n    appearance: {\n      refine: true,\n      init: \"info-service-window\"\n    }\n  }\n});\n"
+  ]
+}

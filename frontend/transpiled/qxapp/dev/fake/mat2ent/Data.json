@@ -1,0 +1,70 @@
+{
+  "className": "qxapp.dev.fake.mat2ent.Data",
+  "packageName": "qxapp.dev.fake.mat2ent",
+  "name": "Data",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 316,
+        "column": 3
+      }
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "mapping": {
+      "location": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 240,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "getLabel": {
+      "location": {
+        "start": {
+          "line": 242,
+          "column": 4
+        },
+        "end": {
+          "line": 249,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "mat2ent": {
+      "location": {
+        "start": {
+          "line": 251,
+          "column": 4
+        },
+        "end": {
+          "line": 313,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

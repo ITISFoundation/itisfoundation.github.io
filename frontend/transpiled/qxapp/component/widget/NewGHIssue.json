@@ -1,0 +1,68 @@
+{
+  "className": "qxapp.component.widget.NewGHIssue",
+  "packageName": "qxapp.component.widget",
+  "name": "NewGHIssue",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 27,
+        "column": 0
+      },
+      "end": {
+        "line": 64,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqxapp - the simcore frontend\n\nhttps:\n\nCopyright:\n2019 IT'IS Foundation, https:\n\nLicense:\nMIT: https:\n\nAuthors:\nOdei Maiz (odeimaiz)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Here is a little example of how to use the widget.\n\n<pre class='javascript'>\n  const url = qxapp.component.widget.NewGHIssue.getNewIssueUrl();\n  window.open(url);\n</pre>"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "getNewIssueUrl": {
+      "location": {
+        "start": {
+          "line": 31,
+          "column": 4
+        },
+        "end": {
+          "line": 42,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getTemplate": {
+      "location": {
+        "start": {
+          "line": 44,
+          "column": 4
+        },
+        "end": {
+          "line": 62,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "../transpiled/qx/ui/window/Desktop.js"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAC,EAAA,EAAC,CAAC,SAAF,CAAY,oBAAZ,CAAiC,aAAjC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;AAKA,EAAA,EAAC,CAAC,KAAF,CAAQ,MAAR,CAAe,sBAAf,EACA;AACC,IAAA,MAAM,EAAG,EAAE,CAAC,EAAH,CAAM,IAAN,CAAW,MADrB;AAGC,IAAA,OAAO,EAAG,CACR,EAAE,CAAC,EAAH,CAAM,IAAN,CAAW,iBADH,EAER,EAAE,CAAC,EAAH,CAAM,MAAN,CAAa,QAFL,EAGR,EAAE,CAAC,EAAH,CAAM,IAAN,CAAW,QAHH,CAHX;AASC,IAAA,SAAS,EAAG,EAAE,CAAC,EAAH,CAAM,MAAN,CAAa,QAT1B;;AAWC;;;;AAIA,IAAA,SAAS,EAAG,mBAAS,aAAT,EACZ;AACE;AACA,MAAA,aAAa,GAAG,aAAa,IAAI,IAAI,EAAE,CAAC,EAAH,CAAM,MAAN,CAAa,MAAb,CAAoB,qBAAxB,EAAjC;AAEA,WAAK,iBAAL,GAAyB,gBAAzB;;AACA,WAAK,UAAL,CAAgB,IAAI,EAAE,CAAC,EAAH,CAAM,MAAN,CAAa,MAAjB,GAA0B,GAA1B,CAA8B;AAC5C,QAAA,OAAO,EAAE;AADmC,OAA9B,CAAhB;;AAGA,WAAK,gBAAL,CAAsB,aAAtB;AACD;AAzBF,GADA;AAvBA,EAAA,EAAC,CAAC,EAAF,CAAK,MAAL,CAAY,OAAZ,CAAoB,aAApB,GAAoC,aAApC",
+  "file": "build-output/apiviewer/part-boot-bundle-47.js.map",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * The desktop is a widget, which can act as container for windows. It can be\n * used to define a clipping region for internal windows e.g. to create\n * an MDI like application.\n */\nqx.Class.define(\"qx.ui.window.Desktop\",\n{\n  extend : qx.ui.core.Widget,\n\n  include : [\n    qx.ui.core.MChildrenHandling,\n    qx.ui.window.MDesktop,\n    qx.ui.core.MBlocker\n  ],\n\n  implement : qx.ui.window.IDesktop,\n\n  /**\n   * @param windowManager {qx.ui.window.IWindowManager} The window manager to use for the desktop.\n   *    If not provided, an instance of {@link qx.ui.window.Window#DEFAULT_MANAGER_CLASS} is used.\n   */\n  construct : function(windowManager)\n  {\n    this.base(arguments);\n    windowManager = windowManager || new qx.ui.window.Window.DEFAULT_MANAGER_CLASS();\n\n    this.getContentElement().disableScrolling();\n    this._setLayout(new qx.ui.layout.Canvas().set({\n      desktop: true\n    }));\n    this.setWindowManager(windowManager);\n  }\n});\n"
+  ]
+}

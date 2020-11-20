@@ -1,0 +1,78 @@
+{
+  "className": "qxapp.dev.fake.srv.db.User",
+  "packageName": "qxapp.dev.fake.srv.db",
+  "name": "User",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 42,
+        "column": 3
+      }
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "DUMMYNAMES": {
+      "location": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 5,
+          "column": 84
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "getObject": {
+      "location": {
+        "start": {
+          "line": 10,
+          "column": 4
+        },
+        "end": {
+          "line": 29,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Creates a json object for a given user id"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getEmail": {
+      "location": {
+        "start": {
+          "line": 31,
+          "column": 4
+        },
+        "end": {
+          "line": 39,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

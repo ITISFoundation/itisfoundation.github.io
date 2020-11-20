@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/filter/UIFilter.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "core",
+    "Widget",
+    "implement",
+    "qxapp",
+    "component",
+    "filter",
+    "IFilter",
+    "type",
+    "construct",
+    "filterId",
+    "groupId",
+    "set",
+    "UIFilterController",
+    "getInstance",
+    "registerFilter",
+    "properties",
+    "nullable",
+    "check",
+    "members",
+    "_getMessageName",
+    "suffix",
+    "utils",
+    "Utils",
+    "capitalize",
+    "getFilterId",
+    "getGroupId",
+    "_filterChange",
+    "data",
+    "filterData",
+    "publish",
+    "UIFilter"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iCAAhB,EAAmD;AACjDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,MAD8B;AAEjDC,IAAAA,SAAS,EAAEC,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,OAFe;AAGjDC,IAAAA,IAAI,EAAE,UAH2C;;AAKjD;;;;;;AAMAC,IAAAA,SAAS,EAAE,mBAASC,QAAT,EAAmBC,OAAnB,EAA4B;AACrC;AACA,WAAKC,GAAL,CAAS;AACPF,QAAAA,QAAQ,EAARA,QADO;AAEPC,QAAAA,OAAO,EAAPA;AAFO,OAAT;AAKAP,MAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBO,kBAAvB,CAA0CC,WAA1C,GAAwDC,cAAxD,CAAuE,IAAvE;AACD,KAnBgD;AAqBjDC,IAAAA,UAAU,EAAE;AACVN,MAAAA,QAAQ,EAAE;AACRO,QAAAA,QAAQ,EAAE,KADF;AAERC,QAAAA,KAAK,EAAE;AAFC,OADA;AAKVP,MAAAA,OAAO,EAAE;AACPM,QAAAA,QAAQ,EAAE,KADH;AAEPC,QAAAA,KAAK,EAAE;AAFA;AALC,KArBqC;AAgCjDC,IAAAA,OAAO,EAAE;AACP;;;;;AAKAC,MAAAA,eAAe,EAAE,2BAA4B;AAAA,YAAnBC,MAAmB,uEAAV,QAAU;AAC3C,eAAOjB,KAAK,CAACkB,KAAN,CAAYC,KAAZ,CAAkBC,UAAlB,CAA6B,KAAKC,WAAL,EAA7B,EAAiD,KAAKC,UAAL,EAAjD,EAAoEL,MAApE,CAAP;AACD,OARM;;AAUP;;;;;AAKAM,MAAAA,aAAa,EAAE,uBAASC,IAAT,EAAe;AAC5B,YAAMC,UAAU,GAAG;AACjBlB,UAAAA,OAAO,EAAE,KAAKe,UAAL,EADQ;AAEjBhB,UAAAA,QAAQ,EAAE,KAAKe,WAAL,EAFO;AAGjBG,UAAAA,IAAI,EAAJA;AAHiB,SAAnB;AAKAxB,QAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBO,kBAAvB,CAA0CC,WAA1C,GAAwDgB,OAAxD,CAAgED,UAAhE;AACD;AAtBM;AAhCwC,GAAnD;AArBAzB,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuByB,QAAvB,CAAgCnC,aAAhC,GAAgDA,aAAhD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Base class for GUI filters. Stores the filter id and group id and implements common filter operations\n * like dispatching changes.\n */\nqx.Class.define(\"qxapp.component.filter.UIFilter\", {\n  extend: qx.ui.core.Widget,\n  implement: qxapp.component.filter.IFilter,\n  type: \"abstract\",\n\n  /**\n   * Base constructor for UIFilter takes the mandatory ids for the filter and the filter group it belongs to.\n   *\n   * @param {string} filterId Group-unique id for the filter.\n   * @param {string} groupId Unique group id where the filter belongs.\n   */\n  construct: function(filterId, groupId) {\n    this.base(arguments);\n    this.set({\n      filterId,\n      groupId\n    });\n\n    qxapp.component.filter.UIFilterController.getInstance().registerFilter(this);\n  },\n\n  properties: {\n    filterId: {\n      nullable: false,\n      check: \"String\"\n    },\n    groupId: {\n      nullable: false,\n      check: \"String\"\n    }\n  },\n\n  members: {\n    /**\n     * Function that returns the name of the dispatched message when a filter changes.\n     *\n     * @param {string} suffix Will be added at the end of the message name to decrease the probability of message name collision.\n     */\n    _getMessageName: function(suffix = \"filter\") {\n      return qxapp.utils.Utils.capitalize(this.getFilterId(), this.getGroupId(), suffix);\n    },\n\n    /**\n     * Function that should be call whenever the filter wants to send its data to the controller and trigger some filtering.\n     *\n     * @param {Object} data Raw data coming from the filter.\n     */\n    _filterChange: function(data) {\n      const filterData = {\n        groupId: this.getGroupId(),\n        filterId: this.getFilterId(),\n        data\n      };\n      qxapp.component.filter.UIFilterController.getInstance().publish(filterData);\n    }\n  }\n});\n"
+  ]
+}

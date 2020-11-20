@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/ui/toolbar/ProgressBar.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "indicator",
+    "ProgressBar",
+    "construct",
+    "properties",
+    "appearance",
+    "refine",
+    "init",
+    "members",
+    "_applyVisibility",
+    "value",
+    "old",
+    "parent",
+    "getLayoutParent",
+    "toolbar",
+    "PartContainer",
+    "core",
+    "queue",
+    "Appearance",
+    "add",
+    "qxapp"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,8BAAhB,EAAgD;AAC9CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,WADsB;AAG9CC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACD,KAL6C;AAO9CC,IAAAA,UAAU,EAAE;AACVC,MAAAA,UAAU,EAAE;AACVC,QAAAA,MAAM,EAAE,IADE;AAEVC,QAAAA,IAAI,EAAE;AAFI;AADF,KAPkC;AAc9CC,IAAAA,OAAO,EAAG;AACR;AACAC,MAAAA,gBAAgB,EAAG,0BAASC,KAAT,EAAgBC,GAAhB,EAAqB;AACtC,gFAAqBD,KAArB,EAA4BC,GAA5B,EADsC,CAEtC;;;AACA,YAAIC,MAAM,GAAG,KAAKC,eAAL,EAAb;;AACA,YAAID,MAAM,IAAIA,MAAM,YAAYnB,EAAE,CAACO,EAAH,CAAMc,OAAN,CAAcC,aAA9C,EAA6D;AAC3DtB,UAAAA,EAAE,CAACO,EAAH,CAAMgB,IAAN,CAAWC,KAAX,CAAiBC,UAAjB,CAA4BC,GAA5B,CAAgCP,MAAhC;AACD;AACF;AATO;AAdoC,GAAhD;AApBAQ,EAAAA,KAAK,CAACpB,EAAN,CAASc,OAAT,CAAiBZ,WAAjB,CAA6BN,aAA7B,GAA6CA,aAA7C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * ProgressBar with its padding and margins adapted to be show inside a qx.ui.toolbar.ToolBar.\n */\nqx.Class.define(\"qxapp.ui.toolbar.ProgressBar\", {\n  extend: qx.ui.indicator.ProgressBar,\n\n  construct: function() {\n    this.base(arguments);\n  },\n\n  properties: {\n    appearance: {\n      refine: true,\n      init: \"toolbar-progressbar\"\n    }\n  },\n\n  members : {\n    // overridden\n    _applyVisibility : function(value, old) {\n      this.base(arguments, value, old);\n      // trigger a appearance recalculation of the parent\n      var parent = this.getLayoutParent();\n      if (parent && parent instanceof qx.ui.toolbar.PartContainer) {\n        qx.ui.core.queue.Appearance.add(parent);\n      }\n    }\n  }\n});\n"
+  ]
+}

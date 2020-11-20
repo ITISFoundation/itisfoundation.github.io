@@ -1,0 +1,31 @@
+{
+  "className": "qxapp.theme.Appearance",
+  "packageName": "qxapp.theme",
+  "name": "Appearance",
+  "superClass": "osparc.theme.osparcdark.Appearance",
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 18,
+        "column": 0
+      },
+      "end": {
+        "line": 474,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqxapp - the simcore frontend\n\nhttps:\n\nCopyright:\n2018 IT'IS Foundation, https:\n\nLicense:\nMIT: https:\n\nAuthors:\nTobias Oetiker (oetiker)\n\n***********************************************************************"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "descendants": []
+}

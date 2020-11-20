@@ -1,0 +1,98 @@
+{
+  "className": "qxapp.dev.fake.materialDB.Data",
+  "packageName": "qxapp.dev.fake.materialDB",
+  "name": "Data",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 2167,
+        "column": 3
+      }
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "itemList": {
+      "location": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 214,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "item": {
+      "location": {
+        "start": {
+          "line": 216,
+          "column": 4
+        },
+        "end": {
+          "line": 2141,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "compare": {
+      "location": {
+        "start": {
+          "line": 2143,
+          "column": 4
+        },
+        "end": {
+          "line": 2151,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getItemList": {
+      "location": {
+        "start": {
+          "line": 2153,
+          "column": 4
+        },
+        "end": {
+          "line": 2157,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getItem": {
+      "location": {
+        "start": {
+          "line": 2159,
+          "column": 4
+        },
+        "end": {
+          "line": 2164,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

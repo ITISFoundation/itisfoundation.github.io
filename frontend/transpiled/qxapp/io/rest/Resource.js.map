@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/io/rest/Resource.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "io",
+    "rest",
+    "Resource",
+    "statics",
+    "AUTHENTICATION",
+    "setAutheticationHeader",
+    "usernameOrToken",
+    "password",
+    "qxapp",
+    "request",
+    "authentication",
+    "Basic",
+    "construct",
+    "description",
+    "configureRequest",
+    "action",
+    "params",
+    "data",
+    "headers",
+    "key",
+    "value",
+    "undefined",
+    "concat",
+    "getAuthHeaders",
+    "forEach",
+    "item",
+    "index",
+    "array",
+    "setRequestHeader"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EAA0C;AACxCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,QADqB;AAGxCC,IAAAA,OAAO,EAAE;AACPC,MAAAA,cAAc,EAAE,IADT;AAGPC,MAAAA,sBAAsB,EAAE,gCAASC,eAAT,EAAyC;AAAA,YAAfC,QAAe,uEAAN,IAAM;AAC/DC,QAAAA,KAAK,CAACR,EAAN,CAASC,IAAT,CAAcC,QAAd,CAAuBE,cAAvB,GAAwC,IAAIX,EAAE,CAACO,EAAH,CAAMS,OAAN,CAAcC,cAAd,CAA6BC,KAAjC,CAAuCL,eAAvC,EAAwDC,QAAxD,CAAxC;AACD;AALM,KAH+B;AAWxCK,IAAAA,SAAS,EAAE,mBAASC,WAAT,EAAsB;AAC/B,iDAAqBA,WAArB;AAEA,WAAKC,gBAAL,CAAsB,UAASL,OAAT,EAAkBM,MAAlB,EAA0BC,MAA1B,EAAkCC,IAAlC,EAAwC;AAC5D,YAAIC,OAAO,GAAG,CAAC;AACbC,UAAAA,GAAG,EAAE,QADQ;AAEbC,UAAAA,KAAK,EAAE;AAFM,SAAD,CAAd;;AAKA,YAAI,KAAKhB,cAAL,KAAwBiB,SAAxB,IAAqC,KAAKjB,cAAL,KAAwB,IAAjE,EAAuE;AACrEc,UAAAA,OAAO,CAACI,MAAR,CAAe,KAAKlB,cAAL,CAAoBmB,cAApB,EAAf;AACD;;AAEDL,QAAAA,OAAO,CAACM,OAAR,CAAgB,UAASC,IAAT,EAAeC,KAAf,EAAsBC,KAAtB,EAA6B;AAC3ClB,UAAAA,OAAO,CAACmB,gBAAR,CAAyBH,IAAI,CAACN,GAA9B,EAAmCM,IAAI,CAACL,KAAxC;AACD,SAFD;AAIAX,QAAAA,OAAO,CAACmB,gBAAR,CAAyB,cAAzB,EAAyC,kBAAzC;AACD,OAfD;AAgBD;AA9BuC,GAA1C;AApBApB,EAAAA,KAAK,CAACR,EAAN,CAASC,IAAT,CAAcC,QAAd,CAAuBN,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Pedro Crespo (pcrespov)\n\n************************************************************************ */\n\n/**\n * Base class for RESTful resources\n */\nqx.Class.define(\"qxapp.io.rest.Resource\", {\n  extend: qx.io.rest.Resource,\n\n  statics: {\n    AUTHENTICATION: null,\n\n    setAutheticationHeader: function(usernameOrToken, password=null) {\n      qxapp.io.rest.Resource.AUTHENTICATION = new qx.io.request.authentication.Basic(usernameOrToken, password);\n    }\n  },\n\n  construct: function(description) {\n    this.base(arguments, description);\n\n    this.configureRequest(function(request, action, params, data) {\n      let headers = [{\n        key: \"Accept\",\n        value: \"application/json\"\n      }];\n\n      if (this.AUTHENTICATION !== undefined && this.AUTHENTICATION !== null) {\n        headers.concat(this.AUTHENTICATION.getAuthHeaders());\n      }\n\n      headers.forEach(function(item, index, array) {\n        request.setRequestHeader(item.key, item.value);\n      });\n\n      request.setRequestHeader(\"Content-Type\", \"application/json\");\n    });\n  }\n});\n"
+  ]
+}

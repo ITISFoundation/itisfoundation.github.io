@@ -1,0 +1,212 @@
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.ui.core.Widget": {
+        "construct": true,
+        "require": true
+      },
+      "qx.util.ResourceManager": {},
+      "qx.module.Css": {},
+      "qx.util.DynamicScriptLoader": {},
+      "qx.dom.Element": {},
+      "qx.bom.element.Attribute": {},
+      "qx.bom.element.Style": {}
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qxapp - the simcore frontend
+  
+     https://osparc.io
+  
+     Copyright:
+       2019 IT'IS Foundation, https://itis.swiss
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+  
+     Authors:
+       * Odei Maiz (odeimaiz)
+  
+  ************************************************************************ */
+
+  /**
+   * @asset(gridsterjs/*)
+   */
+
+  /* global $ */
+
+  /**
+   * A qooxdoo wrapper for
+   * <a href='https://github.com/dsmorse/gridster.js' target='_blank'>gridsterjs</a>
+   */
+  qx.Class.define("qxapp.wrapper.Gridster", {
+    extend: qx.ui.core.Widget,
+    statics: {
+      NAME: "gridster",
+      VERSION: "0.7.0",
+      URL: "https://github.com/dsmorse/gridster.js",
+      buildHeader: function buildHeader(cellOutput) {
+        var html = "<header>";
+        html += cellOutput.getTitle();
+        html += "</header>";
+        return html;
+      },
+      buildContent: function buildContent(cellOutput) {
+        var html = "<content>";
+        html += cellOutput.getOutput();
+        html += "</content>";
+        return html;
+      },
+      buildHtmlCode: function buildHtmlCode(cellOutput) {
+        var html = this.buildHeader(cellOutput);
+        html += this.buildContent(cellOutput);
+        return html;
+      },
+      buildHtmlCodeInList: function buildHtmlCodeInList(cellOutput) {
+        var html = "<li>";
+        html += this.buildHtmlCode(cellOutput);
+        html += "</li>";
+        return html;
+      }
+    },
+    construct: function construct() {
+      var _this = this;
+
+      qx.ui.core.Widget.constructor.call(this);
+      this.addListenerOnce("appear", function () {
+        _this.__init();
+      }, this);
+    },
+    properties: {
+      libReady: {
+        nullable: false,
+        init: false,
+        check: "Boolean"
+      },
+      atomWidth: {
+        nullable: false,
+        init: 25,
+        check: "Number"
+      },
+      atomHeight: {
+        nullable: false,
+        init: 25,
+        check: "Number"
+      }
+    },
+    events: {
+      "gridsterLibReady": "qx.event.type.Data",
+      "widgetSelected": "qx.event.type.Data"
+    },
+    members: {
+      __gridster: null,
+      __init: function __init() {
+        var _this2 = this;
+
+        // initialize the script loading
+        var jQueryPath = "qxapp/gridsterjs/jquery-3.3.1.min.js";
+        var extras = false;
+        var gridsterPath = extras ? "qxapp/gridsterjs/jquery.gridster.with-extras-0.7.0.min.js" : "qxapp/gridsterjs/jquery.gridster-0.7.0.min.js";
+        var gridsterCss = "qxapp/gridsterjs/jquery.gridster-0.7.0.min.css";
+        var gridsterDemoCss = "qxapp/gridsterjs/jquery.gridster.demo.css";
+        var gridsterOsparcCss = "qxapp/gridsterjs/jquery.gridster.osparc.css";
+        var gridsterCssUri = qx.util.ResourceManager.getInstance().toUri(gridsterCss);
+        var gridsterDemoCssUri = qx.util.ResourceManager.getInstance().toUri(gridsterDemoCss);
+        var gridsterOsparcCssUri = qx.util.ResourceManager.getInstance().toUri(gridsterOsparcCss);
+        qx.module.Css.includeStylesheet(gridsterCssUri);
+        qx.module.Css.includeStylesheet(gridsterDemoCssUri);
+        qx.module.Css.includeStylesheet(gridsterOsparcCssUri);
+        var dynLoader = new qx.util.DynamicScriptLoader([jQueryPath, gridsterPath]);
+        dynLoader.addListenerOnce("ready", function (e) {
+          console.log(gridsterPath + " loaded");
+
+          _this2.setLibReady(true);
+
+          _this2.__createEmptyLayout();
+
+          _this2.fireDataEvent("gridsterLibReady", true);
+        }, this);
+        dynLoader.addListener("failed", function (e) {
+          var data = e.getData();
+          console.error("failed to load " + data.script);
+
+          _this2.fireDataEvent("gridsterLibReady", false);
+        }, this);
+        dynLoader.start();
+      },
+      __createEmptyLayout: function __createEmptyLayout() {
+        var gridsterPlaceholder = qx.dom.Element.create("div");
+        qx.bom.element.Attribute.set(gridsterPlaceholder, "id", "gridster");
+        qx.bom.element.Attribute.set(gridsterPlaceholder, "class", "gridster");
+        qx.bom.element.Style.set(gridsterPlaceholder, "width", "100%");
+        qx.bom.element.Style.set(gridsterPlaceholder, "height", "100%");
+        var domEl = this.getContentElement().getDomElement();
+
+        while (domEl.hasChildNodes()) {
+          domEl.removeChild(domEl.lastChild);
+        }
+
+        domEl.appendChild(gridsterPlaceholder);
+        var cellsList = qx.dom.Element.create("ul");
+        gridsterPlaceholder.appendChild(cellsList);
+
+        var maxSize = this.__getMaxSize();
+
+        var nColsMax = maxSize.nColsMax;
+        var nRowsMax = maxSize.nRowsMax;
+        this.__gridster = $(".gridster ul").gridster({
+          "widget_base_dimensions": [this.getAtomWidth(), this.getAtomHeight()],
+          "widget_margins": [5, 5],
+          "max_cols": nColsMax,
+          "max_rows": nRowsMax,
+          // "helper": "clone",
+          "resize": {
+            "enabled": true,
+            "max_size": [nColsMax, nRowsMax]
+          },
+          "draggable": {
+            "handle": "header"
+          }
+        }).data("gridster");
+      },
+      __getMaxSize: function __getMaxSize() {
+        return {
+          nColsMax: Math.floor(this.getBounds().width / this.getAtomWidth()),
+          nRowsMax: Math.floor(2 * this.getBounds().height / this.getAtomHeight())
+        };
+      },
+      addWidget: function addWidget(cellOutput) {
+        var _this3 = this;
+
+        var html = qxapp.wrapper.Gridster.buildHtmlCodeInList(cellOutput);
+
+        var jQueryElement = this.__gridster.add_widget(html, 400 / this.getAtomWidth(), 300 / this.getAtomHeight());
+
+        if (jQueryElement) {
+          var htmlElement = jQueryElement.get(0);
+          htmlElement.addEventListener("dblclick", function (e) {
+            _this3.fireDataEvent("widgetSelected", cellOutput.getHandler().getUuid());
+          }, this);
+          return htmlElement;
+        }
+
+        return null;
+      },
+      rebuildWidget: function rebuildWidget(cellOutput, htmlElement) {
+        var html = qxapp.wrapper.Gridster.buildHtmlCode(cellOutput);
+        html += "<span class='gs-resize-handle gs-resize-handle-both'></span>";
+        htmlElement.innerHTML = html;
+      }
+    }
+  });
+  qxapp.wrapper.Gridster.$$dbClassInfo = $$dbClassInfo;
+})();
+
+//# sourceMappingURL=Gridster.js.map?dt=1568886166780

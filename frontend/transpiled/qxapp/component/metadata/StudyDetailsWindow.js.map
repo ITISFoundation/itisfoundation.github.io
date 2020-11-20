@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/metadata/StudyDetailsWindow.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "window",
+    "Window",
+    "construct",
+    "study",
+    "tr",
+    "getName",
+    "windowWidth",
+    "windowHeight",
+    "set",
+    "layout",
+    "Grow",
+    "contentPadding",
+    "showMinimize",
+    "resizable",
+    "modal",
+    "width",
+    "height",
+    "thumbnailWidth",
+    "studyDetails",
+    "qxapp",
+    "component",
+    "metadata",
+    "StudyDetails",
+    "scroll",
+    "container",
+    "Scroll",
+    "add",
+    "properties",
+    "appearance",
+    "refine",
+    "init",
+    "StudyDetailsWindow"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;AAOA;;;;;;;;;;;;;AAcAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6CAAhB,EAA+D;AAC7DC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,MAAN,CAAaC,MADwC;;AAG7D;;;AAGAC,IAAAA,SAAS,EAAE,mBAASC,KAAT,EAAgB;AACzB,iDAAqB,KAAKC,EAAL,CAAQ,mBAAR,IAA+B,KAA/B,GAAuCD,KAAK,CAACE,OAAN,EAA5D;AAEA,UAAMC,WAAW,GAAG,GAApB;AACA,UAAMC,YAAY,GAAG,GAArB;AACA,WAAKC,GAAL,CAAS;AACPC,QAAAA,MAAM,EAAE,IAAIjB,EAAE,CAACO,EAAH,CAAMU,MAAN,CAAaC,IAAjB,EADD;AAEPC,QAAAA,cAAc,EAAE,EAFT;AAGPC,QAAAA,YAAY,EAAE,KAHP;AAIPC,QAAAA,SAAS,EAAE,IAJJ;AAKPC,QAAAA,KAAK,EAAE,IALA;AAMPC,QAAAA,KAAK,EAAET,WANA;AAOPU,QAAAA,MAAM,EAAET;AAPD,OAAT;AAUA,UAAMU,cAAc,GAAG,CAACX,WAAW,GAAG,GAAf,IAAoB,IAA3C;AACA,UAAMY,YAAY,GAAG,IAAIC,KAAK,CAACC,SAAN,CAAgBC,QAAhB,CAAyBC,YAA7B,CAA0CnB,KAA1C,EAAiDc,cAAjD,CAArB;AACA,UAAMM,MAAM,GAAG,IAAI/B,EAAE,CAACO,EAAH,CAAMyB,SAAN,CAAgBC,MAApB,GAA6BjB,GAA7B,CAAiC;AAC9CQ,QAAAA,MAAM,EAAET;AADsC,OAAjC,CAAf;AAGAgB,MAAAA,MAAM,CAACG,GAAP,CAAWR,YAAX;AACA,WAAKQ,GAAL,CAASH,MAAT;AACD,KA5B4D;AA8B7DI,IAAAA,UAAU,EAAE;AACVC,MAAAA,UAAU,EAAE;AACVC,QAAAA,MAAM,EAAE,IADE;AAEVC,QAAAA,IAAI,EAAE;AAFI;AADF;AA9BiD,GAA/D;AArBAX,EAAAA,KAAK,CAACC,SAAN,CAAgBC,QAAhB,CAAyBU,kBAAzB,CAA4CpC,aAA5C,GAA4DA,aAA5D",
+  "sourcesContent": [
+    "/*\n * oSPARC - The SIMCORE frontend - https://osparc.io\n * Copyright: 2019 IT'IS Foundation - https://itis.swiss\n * License: MIT - https://opensource.org/licenses/MIT\n * Authors: Odei Maiz (odeimaiz)\n */\n\n/**\n * Window that contains the StudyDetails of the given study metadata.\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   const win = new qxapp.component.metadata.StudyDetailsWindow(study);\n *   win.center();\n *   win.open();\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.metadata.StudyDetailsWindow\", {\n  extend: qx.ui.window.Window,\n\n  /**\n    * @param study {Object|qxapp.data.model.Study} Study (metadata)\n    */\n  construct: function(study) {\n    this.base(arguments, this.tr(\"Study information\") + \" · \" + study.getName());\n\n    const windowWidth = 700;\n    const windowHeight = 800;\n    this.set({\n      layout: new qx.ui.layout.Grow(),\n      contentPadding: 10,\n      showMinimize: false,\n      resizable: true,\n      modal: true,\n      width: windowWidth,\n      height: windowHeight\n    });\n\n    const thumbnailWidth = (windowWidth - 250)/1.67;\n    const studyDetails = new qxapp.component.metadata.StudyDetails(study, thumbnailWidth);\n    const scroll = new qx.ui.container.Scroll().set({\n      height: windowHeight\n    });\n    scroll.add(studyDetails);\n    this.add(scroll);\n  },\n\n  properties: {\n    appearance: {\n      refine: true,\n      init: \"info-service-window\"\n    }\n  }\n});\n"
+  ]
+}

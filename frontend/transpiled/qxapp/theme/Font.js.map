@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/theme/Font.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "osparc",
+    "theme",
+    "osparcdark",
+    "Font",
+    "fonts",
+    "size",
+    "family",
+    "color",
+    "bold",
+    "italic",
+    "qxapp"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,kBAAhB,EAAoC;AAClCC,IAAAA,MAAM,EAAEC,MAAM,CAACC,KAAP,CAAaC,UAAb,CAAwBC,IADE;AAGlCC,IAAAA,KAAK,EAAE;AACL,uBAAiB;AACfC,QAAAA,IAAI,EAAE,EADS;AAEfC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFO;AAGfC,QAAAA,KAAK,EAAE,MAHQ;AAIfC,QAAAA,IAAI,EAAE;AAJS,OADZ;AAQL,kBAAY;AACVH,QAAAA,IAAI,EAAE,EADI;AAEVC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFE;AAGVC,QAAAA,KAAK,EAAE,MAHG;AAIVC,QAAAA,IAAI,EAAE;AAJI,OARP;AAeL,kBAAY;AACVH,QAAAA,IAAI,EAAE,EADI;AAEVC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFE;AAGVC,QAAAA,KAAK,EAAE,MAHG;AAIVC,QAAAA,IAAI,EAAE;AAJI,OAfP;AAsBL,iBAAW;AACTH,QAAAA,IAAI,EAAE,EADG;AAETC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFC;AAGTC,QAAAA,KAAK,EAAE;AAHE,OAtBN;AA4BL,kBAAY;AACVF,QAAAA,IAAI,EAAE,EADI;AAEVC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFE;AAGVC,QAAAA,KAAK,EAAE,MAHG;AAIVC,QAAAA,IAAI,EAAE;AAJI,OA5BP;AAmCL,iBAAW;AACTH,QAAAA,IAAI,EAAE,EADG;AAETC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFC;AAGTC,QAAAA,KAAK,EAAE;AAHE,OAnCN;AAyCL,kBAAY;AACVF,QAAAA,IAAI,EAAE,EADI;AAEVC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFE;AAGVC,QAAAA,KAAK,EAAE,MAHG;AAIVC,QAAAA,IAAI,EAAE;AAJI,OAzCP;AAgDL,iBAAW;AACTH,QAAAA,IAAI,EAAE,EADG;AAETC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFC;AAGTC,QAAAA,KAAK,EAAE;AAHE,OAhDN;AAsDL,wBAAkB;AAChBF,QAAAA,IAAI,EAAE,EADU;AAEhBC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFQ;AAGhBC,QAAAA,KAAK,EAAE,MAHS;AAIhBE,QAAAA,MAAM,EAAE;AAJQ,OAtDb;AA6DL,iBAAW;AACTJ,QAAAA,IAAI,EAAE,EADG;AAETC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFC;AAGTC,QAAAA,KAAK,EAAE;AAHE,OA7DN;AAmEL,iBAAW;AACTF,QAAAA,IAAI,EAAE,EADG;AAETC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFC;AAGTC,QAAAA,KAAK,EAAE;AAHE,OAnEN;AAyEL,uBAAiB;AACfF,QAAAA,IAAI,EAAE,CADS;AAEfC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFO;AAGfC,QAAAA,KAAK,EAAE,MAHQ;AAIfE,QAAAA,MAAM,EAAE;AAJO,OAzEZ;AAgFL,8BAAwB;AACtBJ,QAAAA,IAAI,EAAE,EADgB;AAEtBC,QAAAA,MAAM,EAAE,CAAC,QAAD,CAFc;AAGtBC,QAAAA,KAAK,EAAE,sBAHe;AAItBC,QAAAA,IAAI,EAAE;AAJgB;AAhFnB;AAH2B,GAApC;AAlBAE,EAAAA,KAAK,CAACT,KAAN,CAAYE,IAAZ,CAAiBP,aAAjB,GAAiCA,aAAjC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Tobias Oetiker (oetiker)\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\nqx.Theme.define(\"qxapp.theme.Font\", {\n  extend: osparc.theme.osparcdark.Font,\n\n  fonts: {\n    \"nav-bar-label\": {\n      size: 20,\n      family: [\"Roboto\"],\n      color: \"text\",\n      bold: true\n    },\n\n    \"title-18\": {\n      size: 18,\n      family: [\"Roboto\"],\n      color: \"text\",\n      bold: true\n    },\n\n    \"title-16\": {\n      size: 16,\n      family: [\"Roboto\"],\n      color: \"text\",\n      bold: true\n    },\n\n    \"text-16\": {\n      size: 16,\n      family: [\"Roboto\"],\n      color: \"text\"\n    },\n\n    \"title-14\": {\n      size: 14,\n      family: [\"Roboto\"],\n      color: \"text\",\n      bold: true\n    },\n\n    \"text-14\": {\n      size: 14,\n      family: [\"Roboto\"],\n      color: \"text\"\n    },\n\n    \"title-12\": {\n      size: 12,\n      family: [\"Roboto\"],\n      color: \"text\",\n      bold: true\n    },\n\n    \"text-12\": {\n      size: 12,\n      family: [\"Roboto\"],\n      color: \"text\"\n    },\n\n    \"text-12-italic\": {\n      size: 12,\n      family: [\"Roboto\"],\n      color: \"text\",\n      italic: true\n    },\n\n    \"text-11\": {\n      size: 11,\n      family: [\"Roboto\"],\n      color: \"text\"\n    },\n\n    \"text-10\": {\n      size: 10,\n      family: [\"Roboto\"],\n      color: \"text\"\n    },\n\n    \"text-8-italic\": {\n      size: 8,\n      family: [\"Roboto\"],\n      color: \"text\",\n      italic: true\n    },\n\n    \"workbench-start-hint\": {\n      size: 20,\n      family: [\"Roboto\"],\n      color: \"workbench-start-hint\",\n      bold: true\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "className": "qxapp.component.filter.IFilterable",
+  "packageName": "qxapp.component.filter",
+  "name": "IFilterable",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 21,
+        "column": 0
+      },
+      "end": {
+        "line": 83,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqxapp - the simcore frontend\n\nhttps:\n\nCopyright:\n2019 IT'IS Foundation, https:\n\nLicense:\nMIT: https:\n\nAuthors:\nIgnacio Pascual (ignapas)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Defines the methods all UI filterable elements should implement."
+        }
+      ]
+    }
+  },
+  "type": "interface",
+  "members": {
+    "_filter": {
+      "location": {
+        "start": {
+          "line": 30,
+          "column": 4
+        },
+        "end": {
+          "line": 35,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Function in charge of setting the element to a filtered state.\nIt will usually hide it or decrease its opacity, but it could also trigger some other UI changes."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{Object?} data The data contained in the message."
+          },
+          {
+            "name": "@param",
+            "body": "{qx.event.message.Message?} msg Incoming message containing the data."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_unfilter": {
+      "location": {
+        "start": {
+          "line": 44,
+          "column": 4
+        },
+        "end": {
+          "line": 49,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Function in charge of removing the filtered state from the element.\nIt will usually make it visible again, but it could also trigger some other UI changes."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{Object?} data The data contained in the message."
+          },
+          {
+            "name": "@param",
+            "body": "{qx.event.message.Message?} msg Incoming message containing the data."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_shouldReactToFilter": {
+      "location": {
+        "start": {
+          "line": 61,
+          "column": 4
+        },
+        "end": {
+          "line": 66,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Function deciding if the element should react to a filter.\nIt serves as a pre-check before the actual decision of being filtered out or not is made.\nFor example, an element could decide not to react to a text search filter if the length of the text to search is shorter than n characters.\nIt should check the data for all filter ids and return true if it should react to any of them."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{Object} data The data contained in the message."
+          },
+          {
+            "name": "@param",
+            "body": "{qx.event.message.Message?} msg Incoming message containing the data."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} True or false depending on whether the element should take any filter into account.",
+            "type": "Boolean",
+            "description": " True or false depending on whether the element should take any filter into account."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_shouldApplyFilter": {
+      "location": {
+        "start": {
+          "line": 76,
+          "column": 4
+        },
+        "end": {
+          "line": 81,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Function deciding if the element should be filtered out or not from the interface.\nIt should check the data for all filter ids of its group and return true if the element qualifies to be filtered out."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{Object} data The data contained in the message."
+          },
+          {
+            "name": "@param",
+            "body": "{qx.event.message.Message?} msg Incoming message containing the data."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} True or false depending on whether the element should be switched to a filtered state.",
+            "type": "Boolean",
+            "description": " True or false depending on whether the element should be switched to a filtered state."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    }
+  },
+  "descendants": []
+}

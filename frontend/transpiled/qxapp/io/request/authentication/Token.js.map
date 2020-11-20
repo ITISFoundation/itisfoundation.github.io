@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/io/request/authentication/Token.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "implement",
+    "io",
+    "request",
+    "authentication",
+    "IAuthentication",
+    "construct",
+    "token",
+    "__token",
+    "members",
+    "getAuthHeaders",
+    "key",
+    "value",
+    "qxapp",
+    "Token"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;AAiBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uCAAhB,EAAyD;AACvDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MADuC;AAGvDC,IAAAA,SAAS,EAAET,EAAE,CAACU,EAAH,CAAMC,OAAN,CAAcC,cAAd,CAA6BC,eAHe;AAKvDC,IAAAA,SAAS,EAAE,mBAASC,KAAT,EAAgB;AACzB,WAAKC,OAAL,GAAeD,KAAf;AACD,KAPsD;AASvDE,IAAAA,OAAO,EAAE;AACPD,MAAAA,OAAO,EAAE,IADF;AAGPE,MAAAA,cAAc,EAAE,0BAAW;AACzB,eAAO,CAAC;AACNC,UAAAA,GAAG,EAAE,eADC;AAENC,UAAAA,KAAK,EAAE,YAAY,KAAKJ;AAFlB,SAAD,CAAP;AAID;AARM;AAT8C,GAAzD;AAjBAK,EAAAA,KAAK,CAACX,EAAN,CAASC,OAAT,CAAiBC,cAAjB,CAAgCU,KAAhC,CAAsCnB,aAAtC,GAAsDA,aAAtD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\nqx.Class.define(\"qxapp.io.request.authentication.Token\", {\n  extend: qx.core.Object,\n\n  implement: qx.io.request.authentication.IAuthentication,\n\n  construct: function(token) {\n    this.__token = token;\n  },\n\n  members: {\n    __token: null,\n\n    getAuthHeaders: function() {\n      return [{\n        key: \"Authorization\",\n        value: \"Bearer \" + this.__token\n      }];\n    }\n  }\n});\n"
+  ]
+}

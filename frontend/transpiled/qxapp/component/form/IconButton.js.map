@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/form/IconButton.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "basic",
+    "Image",
+    "construct",
+    "icon",
+    "cb",
+    "context",
+    "addListener",
+    "setCursor",
+    "qxapp",
+    "component",
+    "form",
+    "IconButton"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iCAAhB,EAAmD;AACjDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,KAAN,CAAYC,KAD6B;;AAGjD;;;;;;;;AAQAC,IAAAA,SAAS,EAAE,mBAASC,IAAT,EAAeC,EAAf,EAAmBC,OAAnB,EAA4B;AACrC,+CAAqBF,IAArB;;AACA,UAAIC,EAAJ,EAAQ;AACN,aAAKE,WAAL,CAAiB,KAAjB,EAAwBF,EAAxB,EAA4BC,OAA5B;AACD;;AACD,WAAKE,SAAL,CAAe,SAAf;AACD;AAjBgD,GAAnD;AApBAC,EAAAA,KAAK,CAACC,SAAN,CAAgBC,IAAhB,CAAqBC,UAArB,CAAgChB,aAAhC,GAAgDA,aAAhD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Small and simple icon button to trigger different actions on tap.\n */\nqx.Class.define(\"qxapp.component.form.IconButton\", {\n  extend: qx.ui.basic.Image,\n\n  /**\n   * Constructor for IconButton. It takes the icon id that will be converted into a button and a callback function\n   * that will be executed whenever the button is clicked.\n   *\n   * @param {String} icon Clickable icon to display.\n   * @param {function} cb Callback function to be executed on tap.\n   * @param {object} context Execution context (this) of the callback function.\n   */\n  construct: function(icon, cb, context) {\n    this.base(arguments, icon);\n    if (cb) {\n      this.addListener(\"tap\", cb, context);\n    }\n    this.setCursor(\"pointer\");\n  }\n});\n"
+  ]
+}

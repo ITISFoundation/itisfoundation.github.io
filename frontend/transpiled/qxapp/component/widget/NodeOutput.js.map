@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/NodeOutput.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "qxapp",
+    "component",
+    "widget",
+    "NodeInOut",
+    "construct",
+    "node",
+    "atom",
+    "getAtom",
+    "getNode",
+    "bind",
+    "converter",
+    "data",
+    "members",
+    "populateNodeLayout",
+    "emptyPorts",
+    "metaData",
+    "getMetaData",
+    "_createUIPorts",
+    "inputs",
+    "NodeOutput"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;;;;;;;;;;AAgBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EAAqD;AACnDC,IAAAA,MAAM,EAAEC,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,SADoB;;AAGnD;;;AAGAC,IAAAA,SAAS,EAAE,mBAASC,IAAT,EAAe;AACxB,8DAAqBA,IAArB;AAEA,UAAMC,IAAI,GAAG,KAAKC,OAAL,EAAb;AACA,WAAKC,OAAL,GAAeC,IAAf,CAAoB,OAApB,EAA6BH,IAA7B,EAAmC,OAAnC,EAA4C;AAC1CI,QAAAA,SAAS,EAAE,mBAASC,IAAT,EAAe;AACxB,iBAAOA,IAAI,GAAG,eAAd;AACD;AAHyC,OAA5C;AAKD,KAfkD;AAiBnDC,IAAAA,OAAO,EAAE;AACPC,MAAAA,kBAAkB,EAAE,8BAAW;AAC7B,aAAKC,UAAL;AAEA,YAAMC,QAAQ,GAAG,KAAKP,OAAL,GAAeQ,WAAf,EAAjB;;AACA,aAAKC,cAAL,CAAoB,IAApB,EAA0BF,QAAQ,CAACG,MAAnC;AACD;AANM;AAjB0C,GAArD;AAjCAlB,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBiB,UAAvB,CAAkCvB,aAAlC,GAAkDA,aAAlD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * Widget that represents what nodes need to be exposed to outside the container.\n *\n * It offers Drag&Drop mechanism for exposing inner nodes.\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   let nodeOutput = new qxapp.component.widget.NodeOutput(node);\n *   nodeOutput.populateNodeLayout();\n *   this.getRoot().add(nodeOutput);\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.widget.NodeOutput\", {\n  extend: qxapp.component.widget.NodeInOut,\n\n  /**\n    * @param node {qxapp.data.model.Node} Node owning the widget\n  */\n  construct: function(node) {\n    this.base(arguments, node);\n\n    const atom = this.getAtom();\n    this.getNode().bind(\"label\", atom, \"label\", {\n      converter: function(data) {\n        return data + \"'s<br>outputs\";\n      }\n    });\n  },\n\n  members: {\n    populateNodeLayout: function() {\n      this.emptyPorts();\n\n      const metaData = this.getNode().getMetaData();\n      this._createUIPorts(true, metaData.inputs);\n    }\n  }\n});\n"
+  ]
+}

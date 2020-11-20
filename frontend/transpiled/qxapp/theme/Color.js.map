@@ -1,0 +1,25 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/theme/Color.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "osparc",
+    "theme",
+    "osparcdark",
+    "Color",
+    "colors",
+    "qxapp"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mBAAhB,EAAqC;AACnCC,IAAAA,MAAM,EAAEC,MAAM,CAACC,KAAP,CAAaC,UAAb,CAAwBC,KADG;AAGnCC,IAAAA,MAAM,EAAE;AACN,oCAA8B,MADxB;AAEN,mCAA6B,MAFvB;AAGN,iCAA2B,MAHrB;AAIN,8BAAwB,MAJlB;AAKN,6BAAuB,MALjB;AAMN,gCAA0B,MANpB;AAON,8BAAwB,MAPlB;AAQN,iCAA2B,SARrB;AASN,kCAA4B,SATtB;AAUN,0BAAoB,eAVd;AAWN,qBAAe,eAXT;AAYN,iCAA2B,iBAZrB;AAaN,8BAAwB,SAblB;AAcN,qBAAe,SAdT;AAeN,oBAAc;AAfR;AAH2B,GAArC;AAlBAC,EAAAA,KAAK,CAACJ,KAAN,CAAYE,KAAZ,CAAkBP,aAAlB,GAAkCA,aAAlC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Tobias Oetiker (oetiker)\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\nqx.Theme.define(\"qxapp.theme.Color\", {\n  extend: osparc.theme.osparcdark.Color,\n\n  colors: {\n    \"workbench-edge-comp-active\": \"#777\",\n    \"workbench-edge-api-active\": \"#BBB\",\n    \"workbench-edge-selected\": \"#00F\",\n    \"logger-debug-message\": \"#FFF\",\n    \"logger-info-message\": \"#FFF\",\n    \"logger-warning-message\": \"#FF0\",\n    \"logger-error-message\": \"#F00\",\n    \"background-main-lighter\": \"#303030\",\n    \"background-main-lighter+\": \"#373737\",\n    \"text-placeholder\": \"text-disabled\",\n    \"text-darker\": \"text-disabled\",\n    \"tabview-pane-background\": \"background-main\",\n    \"workbench-start-hint\": \"#505050\",\n    \"ready-green\": \"#33925A\",\n    \"failed-red\": \"#FF2D2D\"\n  }\n});\n"
+  ]
+}

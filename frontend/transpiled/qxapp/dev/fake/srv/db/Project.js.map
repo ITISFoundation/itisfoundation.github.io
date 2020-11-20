@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/dev/fake/srv/db/Project.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "statics",
+    "DUMMYNAMES",
+    "getObject",
+    "studyId",
+    "name",
+    "qxapp",
+    "dev",
+    "fake",
+    "srv",
+    "db",
+    "Project",
+    "study",
+    "id",
+    "description",
+    "thumbnail",
+    "createdDate",
+    "Date",
+    "length",
+    "modifiedDate"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,+BAAhB,EAAiD;AAC/CC,IAAAA,IAAI,EAAE,QADyC;AAG/CC,IAAAA,OAAO,EAAE;AACPC,MAAAA,UAAU,EAAE,CAAC,kBAAD,EAAqB,iBAArB,EAAwC,uBAAxC,EAAiE,cAAjE,EAAiF,SAAjF,EAA4F,eAA5F,CADL;;AAGP;;;AAGAC,MAAAA,SAAS,EAAE,mBAASC,OAAT,EAAkB;AAC3B,YAAMC,IAAI,GAAGC,KAAK,CAACC,GAAN,CAAUC,IAAV,CAAeC,GAAf,CAAmBC,EAAnB,CAAsBC,OAAtB,CAA8BT,UAA9B,CAAyCE,OAAzC,CAAb;AACA,YAAIQ,KAAK,GAAG;AACVC,UAAAA,EAAE,EAAET,OADM;AAEVC,UAAAA,IAAI,EAAEA,IAFI;AAGVS,UAAAA,WAAW,EAAE,gCAAgCT,IAHnC;AAIVU,UAAAA,SAAS,EAAE,gEAJD;AAKVC,UAAAA,WAAW,EAAE,IAAIC,IAAJ,CAAS,OAAOZ,IAAI,CAACa,MAArB,EAA6B,EAA7B,EAAiC,EAAjC,CALH;AAMVC,UAAAA,YAAY,EAAE,IAAIF,IAAJ,CAAS,OAAOZ,IAAI,CAACa,MAArB,EAA6B,EAA7B,EAAiC,EAAjC;AANJ,SAAZ;AAQA,eAAON,KAAP;AACD;AAjBM;AAHsC,GAAjD;AAAAN,EAAAA,KAAK,CAACC,GAAN,CAAUC,IAAV,CAAeC,GAAf,CAAmBC,EAAnB,CAAsBC,OAAtB,CAA8Bd,aAA9B,GAA8CA,aAA9C",
+  "sourcesContent": [
+    "qx.Class.define(\"qxapp.dev.fake.srv.db.Project\", {\n  type: \"static\",\n\n  statics: {\n    DUMMYNAMES: [\"My EM-Simulation\", \"FDTD-Simulation\", \"Some Neuro-Simulatoin\", \"Clancy Model\", \"DemoPrj\", \"LF Simulation\"],\n\n    /**\n     * Creates a json object for a given study id\n    */\n    getObject: function(studyId) {\n      const name = qxapp.dev.fake.srv.db.Project.DUMMYNAMES[studyId];\n      let study = {\n        id: studyId,\n        name: name,\n        description: \"Short description of study \" + name,\n        thumbnail: \"https://imgplaceholder.com/171x96/cccccc/757575/ion-plus-round\",\n        createdDate: new Date(1990 + name.length, 11, 25),\n        modifiedDate: new Date(1990 + name.length, 12, 25)\n      };\n      return study;\n    }\n  }\n});\n"
+  ]
+}

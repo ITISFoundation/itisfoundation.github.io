@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/filter/IFilter.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Interface",
+    "define",
+    "members",
+    "reset",
+    "assertArgumentsCount",
+    "arguments",
+    "qxapp",
+    "component",
+    "filter",
+    "IFilter"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,SAAH,CAAaC,MAAb,CAAoB,gCAApB,EAAsD;AACpDC,IAAAA,OAAO,EAAC;AACN;;;AAGAC,MAAAA,KAAK,EAAE,iBAAW;AAChB,aAAKC,oBAAL,CAA0BC,SAA1B,EAAqC,CAArC,EAAwC,CAAxC;AACD;AANK;AAD4C,GAAtD;AApBAC,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,OAAvB,CAA+BV,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Defines the methods all UIFilter elements should implement.\n */\nqx.Interface.define(\"qxapp.component.filter.IFilter\", {\n  members:{\n    /**\n     * Function in charge of resetting the filter.\n     */\n    reset: function() {\n      this.assertArgumentsCount(arguments, 0, 0);\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "className": "qxapp.utils.LibVersions",
+  "packageName": "qxapp.utils",
+  "name": "LibVersions",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 18,
+        "column": 0
+      },
+      "end": {
+        "line": 124,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqxapp - the simcore frontend\n\nhttps:\n\nCopyright:\n2019 IT'IS Foundation, https:\n\nLicense:\nMIT: https:\n\nAuthors:\nOdei Maiz (odeimaiz)\n\n***********************************************************************"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "__getRemoteUrl": {
+      "location": {
+        "start": {
+          "line": 22,
+          "column": 4
+        },
+        "end": {
+          "line": 33,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "getPlatformVersion": {
+      "location": {
+        "start": {
+          "line": 34,
+          "column": 4
+        },
+        "end": {
+          "line": 49,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getUIVersion": {
+      "location": {
+        "start": {
+          "line": 51,
+          "column": 4
+        },
+        "end": {
+          "line": 70,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getQxCompiler": {
+      "location": {
+        "start": {
+          "line": 72,
+          "column": 4
+        },
+        "end": {
+          "line": 78,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getQxLibraryInfoMap": {
+      "location": {
+        "start": {
+          "line": 80,
+          "column": 4
+        },
+        "end": {
+          "line": 94,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "get3rdPartyLibs": {
+      "location": {
+        "start": {
+          "line": 96,
+          "column": 4
+        },
+        "end": {
+          "line": 107,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getEnvLibs": {
+      "location": {
+        "start": {
+          "line": 109,
+          "column": 4
+        },
+        "end": {
+          "line": 122,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

@@ -1,0 +1,59 @@
+{
+  "className": "osparc.theme.osparcdark.Font",
+  "packageName": "osparc.theme.osparcdark",
+  "name": "Font",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 28,
+        "column": 0
+      },
+      "end": {
+        "line": 120,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nOSparc Dark Theme for Qooxdoo\n\nCopyright:\n2018 IT'IS Foundation\n\nLicense:\nMIT: https:\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTobias Oetiker (oetiker)\n\nOrigin:\nThis theme is based in large parts on the the Simple\ntheme included with Qooxdoo.\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        },
+        {
+          "name": "@description",
+          "body": "The simple qooxdoo font theme."
+        }
+      ],
+      "@asset": [
+        {
+          "name": "@asset",
+          "body": "osparc/font/*.woff"
+        },
+        {
+          "name": "@asset",
+          "body": "osparc/font/*.woff2"
+        },
+        {
+          "name": "@asset",
+          "body": "osparc/font/*.eot"
+        },
+        {
+          "name": "@asset",
+          "body": "osparc/font/*.ttf"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "descendants": [
+    "qxapp.theme.Font"
+  ]
+}

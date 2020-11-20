@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/dev/Placeholders.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "statics",
+    "getIcon",
+    "iconId",
+    "width",
+    "height",
+    "prefix",
+    "shape",
+    "url",
+    "getImage",
+    "qxapp",
+    "dev",
+    "Placeholders"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;AACA;AAEAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EAA0C;AACxCC,IAAAA,IAAI,EAAE,QADkC;AAGxCC,IAAAA,OAAO,EAAE;AAEP;;;;;AAKAC,MAAAA,OAAO,EAAE,iBAASC,MAAT,EAAiBC,KAAjB,EAAuC;AAAA,YAAfC,MAAe,uEAAN,IAAM;AAC9C;AACAA,QAAAA,MAAM,GAAIA,MAAM,KAAK,IAAZ,GAAoBD,KAApB,GAA4BC,MAArC;AAEA,YAAMC,MAAM,GAAG,6BAAf;AACA,YAAMC,KAAK,GAAGH,KAAK,GAAG,GAAR,GAAcC,MAA5B;AACA,YAAMG,GAAG,GAAGF,MAAM,GAAGC,KAAT,GAAiB,sBAAjB,GAA0CJ,MAAtD,CAN8C,CAQ9C;;AACA,eAAOK,GAAP;AACD,OAjBM;;AAmBP;;;;;;AAMAC,MAAAA,QAAQ,EAAE,kBAASL,KAAT,EAA+B;AAAA,YAAfC,MAAe,uEAAN,IAAM;AACvC;AAEAA,QAAAA,MAAM,GAAIA,MAAM,KAAK,IAAZ,GAAoBD,KAApB,GAA4BC,MAArC;AACA,YAAMG,GAAG,GAAG,2BAA2BJ,KAA3B,GAAmC,GAAnC,GAAyCC,MAArD,CAJuC,CAMvC;;AACA,eAAOG,GAAP;AACD;AAjCM;AAH+B,GAA1C;AApBAE,EAAAA,KAAK,CAACC,GAAN,CAAUC,YAAV,CAAuBf,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Pedro Crespo (pcrespov)\n\n************************************************************************ */\n\n/* eslint new-cap: [2, {capIsNewExceptions: [\"B\", \"D\", \"J\", \"K\", \"L\", \"MD5\"]}] */\n/* eslint operator-assignment: [\"off\"] */\n\nqx.Class.define(\"qxapp.dev.Placeholders\", {\n  type: \"static\",\n\n  statics: {\n\n    /**\n     * Returns URL to an icon in collection\n     *\n     * See https://imgplaceholder.com/\n    */\n    getIcon: function(iconId, width, height = null) {\n      // see https://imgplaceholder.com/\n      height = (height === null) ? width : height;\n\n      const prefix = \"https://imgplaceholder.com/\";\n      const shape = width + \"x\" + height;\n      const url = prefix + shape + \"/transparent/757575/\" + iconId;\n\n      // e.g. // https://imgplaceholder.com/128x128/transparent/757575/fa-user\n      return url;\n    },\n\n    /**\n     * Returns URL to a rectangular place-holder image of given\n     * dimensions.\n     *\n     * See https://placeholder.com/\n    */\n    getImage: function(width, height = null) {\n      //\n\n      height = (height === null) ? width : height;\n      const url = \"//via.placeholder.com/\" + width + \"x\" + height;\n\n      // e.g. http://via.placeholder.com/350x150\n      return url;\n    }\n  }\n});\n"
+  ]
+}

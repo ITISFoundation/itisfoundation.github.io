@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/test/data/MimeType.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MRequirements",
+    "MMock",
+    "members",
+    "setUp",
+    "console",
+    "debug",
+    "tearDown",
+    "getSandbox",
+    "restore",
+    "testGetMimeType",
+    "forEach",
+    "pair",
+    "a",
+    "qxapp",
+    "data",
+    "MimeType",
+    "getMimeType",
+    "assertIdentical",
+    "testMatch",
+    "aPortType",
+    "bPortType",
+    "aMimeType",
+    "bMimeType",
+    "b",
+    "assert",
+    "match",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,0BAAhB,EACE;AACEC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADtB;AAEEC,IAAAA,OAAO,EAAE,CAACV,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYG,aAAb,EAA4BX,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYI,KAAxC,CAFX;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAE,iBAAW;AAChBC,QAAAA,OAAO,CAACC,KAAR,CAAc,gBAAd;AACA,aAAKA,KAAL,CAAW,gBAAX;AACD,OAJH;AAMEC,MAAAA,QAAQ,EAAE,oBAAW;AACnBF,QAAAA,OAAO,CAACC,KAAR,CAAc,eAAd;AACA,aAAKA,KAAL,CAAW,eAAX;AACA,aAAKE,UAAL,GAAkBC,OAAlB;AACD,OAVH;;AAYE;;;;;AAMAC,MAAAA,eAAe,EAAE,2BAAW;AAAA;;AAC1B,SACE,CAAC,OAAD,EAAU,IAAV,CADF,EAEE,CAAC,UAAD,EAAa,KAAb,CAFF,EAGE,CAAC,eAAD,EAAkB,UAAlB,CAHF,EAIE,CAAC,oBAAD,EAAuB,eAAvB,CAJF,EAKEC,OALF,CAKU,UAAAC,IAAI,EAAI;AAChB,cAAMC,CAAC,GAAGC,KAAK,CAACC,IAAN,CAAWC,QAAX,CAAoBC,WAApB,CAAgCL,IAAI,CAAC,CAAD,CAApC,CAAV;;AACA,UAAA,KAAI,CAACM,eAAL,CAAqBL,CAArB,EAAwBD,IAAI,CAAC,CAAD,CAA5B,EAAiC,mBAAmBA,IAAI,CAAC,CAAD,CAAxD;AACD,SARD,EAQG,IARH;AASD,OA5BH;AA8BEO,MAAAA,SAAS,EAAE,qBAAW;AACpB,YAAMC,SAAS,GAAG,UAAlB;AACA,YAAMC,SAAS,GAAG,eAAlB;AACA,YAAMC,SAAS,GAAGR,KAAK,CAACC,IAAN,CAAWC,QAAX,CAAoBC,WAApB,CAAgCG,SAAhC,CAAlB;AACA,YAAMG,SAAS,GAAGT,KAAK,CAACC,IAAN,CAAWC,QAAX,CAAoBC,WAApB,CAAgCI,SAAhC,CAAlB;AACA,YAAMR,CAAC,GAAG,IAAIC,KAAK,CAACC,IAAN,CAAWC,QAAf,CAAwBM,SAAxB,CAAV;AACA,YAAME,CAAC,GAAG,IAAIV,KAAK,CAACC,IAAN,CAAWC,QAAf,CAAwBO,SAAxB,CAAV;AACA,aAAKE,MAAL,CAAYZ,CAAC,CAACa,KAAF,CAAQF,CAAR,CAAZ,EAAwB,6BAAxB;AACD;AAtCH;AALF,GADF;AArBAV,EAAAA,KAAK,CAACa,IAAN,CAAWZ,IAAX,CAAgBC,QAAhB,CAAyBvB,aAAzB,GAAyCA,aAAzC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * Test MimeType class\n *\n */\nqx.Class.define(\"qxapp.test.data.MimeType\",\n  {\n    extend: qx.dev.unit.TestCase,\n    include: [qx.dev.unit.MRequirements, qx.dev.unit.MMock],\n\n    members:\n    {\n      setUp: function() {\n        console.debug(\"Setting up .. \");\n        this.debug(\"Setting up ...\");\n      },\n\n      tearDown: function() {\n        console.debug(\"Tear down .. \");\n        this.debug(\"Tear down ...\");\n        this.getSandbox().restore();\n      },\n\n      /*\n      ---------------------- -----------------------------------------------------\n        TESTS\n      ---------------------------------------------------------------------------\n      */\n\n      testGetMimeType: function() {\n        [\n          [\"image\", null],\n          [\"data:*/*\", \"*/*\"],\n          [\"data:text/csv\", \"text/csv\"],\n          [\"data:image/svg+xml\", \"image/svg+xml\"]\n        ].forEach(pair => {\n          const a = qxapp.data.MimeType.getMimeType(pair[0]);\n          this.assertIdentical(a, pair[1], \"should return \" + pair[1]);\n        }, this);\n      },\n\n      testMatch: function() {\n        const aPortType = \"data:*/*\";\n        const bPortType = \"data:text/csv\";\n        const aMimeType = qxapp.data.MimeType.getMimeType(aPortType);\n        const bMimeType = qxapp.data.MimeType.getMimeType(bPortType);\n        const a = new qxapp.data.MimeType(aMimeType);\n        const b = new qxapp.data.MimeType(bMimeType);\n        this.assert(a.match(b), \"*/* should match everything\");\n      }\n    }\n  });\n"
+  ]
+}

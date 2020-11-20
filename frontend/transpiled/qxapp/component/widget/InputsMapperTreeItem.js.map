@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/InputsMapperTreeItem.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "tree",
+    "VirtualTreeItem",
+    "construct",
+    "properties",
+    "isDir",
+    "check",
+    "nullable",
+    "init",
+    "isRoot",
+    "nodeKey",
+    "portKey",
+    "qxapp",
+    "component",
+    "widget",
+    "InputsMapperTreeItem"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;;;;;;;;;;;;;;;AAqBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6CAAhB,EAA+D;AAC7DC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,eAD0C;AAG7DC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACD,KAL4D;AAO7DC,IAAAA,UAAU,EAAE;AACVC,MAAAA,KAAK,EAAE;AACLC,QAAAA,KAAK,EAAE,SADF;AAELC,QAAAA,QAAQ,EAAE,KAFL;AAGLC,QAAAA,IAAI,EAAE;AAHD,OADG;AAOVC,MAAAA,MAAM,EAAE;AACNH,QAAAA,KAAK,EAAE,SADD;AAENC,QAAAA,QAAQ,EAAE,KAFJ;AAGNC,QAAAA,IAAI,EAAE;AAHA,OAPE;AAaVE,MAAAA,OAAO,EAAE;AACPJ,QAAAA,KAAK,EAAE,QADA;AAEPC,QAAAA,QAAQ,EAAE;AAFH,OAbC;AAkBVI,MAAAA,OAAO,EAAE;AACPL,QAAAA,KAAK,EAAE,QADA;AAEPC,QAAAA,QAAQ,EAAE;AAFH;AAlBC;AAPiD,GAA/D;AAtCAK,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,oBAAvB,CAA4CnB,aAA5C,GAA4DA,aAA5D",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * VirtualTreeItem used mainly by InputMapper\n *\n *   It consists of an entry icon and label\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   tree.setDelegate({\n *     createItem: () => new qxapp.component.widget.InputsMapperTreeItem(),\n *     bindItem: (c, item, id) => {\n *       c.bindDefaultProperties(item, id);\n *       c.bindProperty(\"isDir\", \"isDir\", null, item, id);\n *       c.bindProperty(\"isRoot\", \"isRoot\", null, item, id);\n *     }\n *   });\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.widget.InputsMapperTreeItem\", {\n  extend: qx.ui.tree.VirtualTreeItem,\n\n  construct: function() {\n    this.base(arguments);\n  },\n\n  properties: {\n    isDir: {\n      check: \"Boolean\",\n      nullable: false,\n      init: true\n    },\n\n    isRoot: {\n      check: \"Boolean\",\n      nullable: false,\n      init: false\n    },\n\n    nodeKey: {\n      check: \"String\",\n      nullable: false\n    },\n\n    portKey: {\n      check: \"String\",\n      nullable: false\n    }\n  }\n});\n"
+  ]
+}

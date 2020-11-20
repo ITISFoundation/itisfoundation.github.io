@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/desktop/MainPanel.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "core",
+    "Widget",
+    "construct",
+    "_setLayout",
+    "layout",
+    "VBox",
+    "hBox",
+    "__mainView",
+    "container",
+    "Composite",
+    "HBox",
+    "set",
+    "allowGrowY",
+    "_add",
+    "flex",
+    "controlsBar",
+    "__controlsBar",
+    "qxapp",
+    "desktop",
+    "ControlsBar",
+    "properties",
+    "mainView",
+    "nullable",
+    "check",
+    "apply",
+    "members",
+    "__applyMainView",
+    "newWidget",
+    "removeAll",
+    "add",
+    "getControls",
+    "MainPanel"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;AAEA;;;;;;;;;;;;;;AAeAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,yBAAhB,EAA2C;AACzCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,MADsB;AAGzCC,IAAAA,SAAS,EAAE,qBAAW;AACpB;;AAEA,WAAKC,UAAL,CAAgB,IAAIX,EAAE,CAACO,EAAH,CAAMK,MAAN,CAAaC,IAAjB,EAAhB;;AAEA,UAAIC,IAAI,GAAG,KAAKC,UAAL,GAAkB,IAAIf,EAAE,CAACO,EAAH,CAAMS,SAAN,CAAgBC,SAApB,CAA8B,IAAIjB,EAAE,CAACO,EAAH,CAAMK,MAAN,CAAaM,IAAjB,CAAsB,CAAtB,CAA9B,EAAwDC,GAAxD,CAA4D;AACvFC,QAAAA,UAAU,EAAE;AAD2E,OAA5D,CAA7B;;AAGA,WAAKC,IAAL,CAAUP,IAAV,EAAgB;AACdQ,QAAAA,IAAI,EAAE;AADQ,OAAhB;;AAIA,UAAIC,WAAW,GAAG,KAAKC,aAAL,GAAqB,IAAIC,KAAK,CAACC,OAAN,CAAcC,WAAlB,EAAvC;;AACA,WAAKN,IAAL,CAAUE,WAAV;AACD,KAjBwC;AAmBzCK,IAAAA,UAAU,EAAE;AACVC,MAAAA,QAAQ,EAAE;AACRC,QAAAA,QAAQ,EAAE,KADF;AAERC,QAAAA,KAAK,EAAG,mBAFA;AAGRC,QAAAA,KAAK,EAAG;AAHA;AADA,KAnB6B;AA2BzCC,IAAAA,OAAO,EAAE;AACPlB,MAAAA,UAAU,EAAE,IADL;AAEPS,MAAAA,aAAa,EAAE,IAFR;AAIPU,MAAAA,eAAe,EAAE,yBAASC,SAAT,EAAoB;AACnC,aAAKpB,UAAL,CAAgBqB,SAAhB;;AACA,aAAKrB,UAAL,CAAgBsB,GAAhB,CAAoBF,SAApB,EAA+B;AAC7Bb,UAAAA,IAAI,EAAE;AADuB,SAA/B;AAGD,OATM;AAWPgB,MAAAA,WAAW,EAAE,uBAAW;AACtB,eAAO,KAAKd,aAAZ;AACD;AAbM;AA3BgC,GAA3C;AAlCAC,EAAAA,KAAK,CAACC,OAAN,CAAca,SAAd,CAAwBpC,aAAxB,GAAwCA,aAAxC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/* eslint no-underscore-dangle: 0 */\n\n/**\n * Widget containing a Vertical Box with a MainView and ControlsBar.\n * Used as Main View in the study editor.\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   let mainPanel = this.__mainPanel = new qxapp.desktop.MainPanel();\n *   mainPanel.setMainView(widget);\n *   this.getRoot().add(mainPanel);\n * </pre>\n */\n\nqx.Class.define(\"qxapp.desktop.MainPanel\", {\n  extend: qx.ui.core.Widget,\n\n  construct: function() {\n    this.base(arguments);\n\n    this._setLayout(new qx.ui.layout.VBox());\n\n    let hBox = this.__mainView = new qx.ui.container.Composite(new qx.ui.layout.HBox(5)).set({\n      allowGrowY: true\n    });\n    this._add(hBox, {\n      flex: 1\n    });\n\n    let controlsBar = this.__controlsBar = new qxapp.desktop.ControlsBar();\n    this._add(controlsBar);\n  },\n\n  properties: {\n    mainView: {\n      nullable: false,\n      check : \"qx.ui.core.Widget\",\n      apply : \"__applyMainView\"\n    }\n  },\n\n  members: {\n    __mainView: null,\n    __controlsBar: null,\n\n    __applyMainView: function(newWidget) {\n      this.__mainView.removeAll();\n      this.__mainView.add(newWidget, {\n        flex: 1\n      });\n    },\n\n    getControls: function() {\n      return this.__controlsBar;\n    }\n  }\n});\n"
+  ]
+}

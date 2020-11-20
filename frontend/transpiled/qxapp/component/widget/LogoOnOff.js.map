@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/LogoOnOff.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "container",
+    "Stack",
+    "type",
+    "construct",
+    "forEach",
+    "logo",
+    "image",
+    "basic",
+    "Image",
+    "set",
+    "width",
+    "height",
+    "scale",
+    "_add",
+    "members",
+    "online",
+    "setSelection",
+    "getSelectables",
+    "qxapp",
+    "component",
+    "widget",
+    "LogoOnOff"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;;;;;;;;;AAeAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,kCAAhB,EAAoD;AAClDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,KAD0B;AAGlDC,IAAAA,IAAI,EAAE,WAH4C;AAKlDC,IAAAA,SAAS,EAAE,qBAAW;AAAA;;AACpB;AAEA,OACE,sBADF,EAEE,wBAFF,EAGEC,OAHF,CAGU,UAAAC,IAAI,EAAI;AAChB,YAAIC,KAAK,GAAG,IAAId,EAAE,CAACO,EAAH,CAAMQ,KAAN,CAAYC,KAAhB,CAAsBH,IAAtB,EAA4BI,GAA5B,CAAgC;AAC1CC,UAAAA,KAAK,EAAE,EADmC;AAE1CC,UAAAA,MAAM,EAAE,EAFkC;AAG1CC,UAAAA,KAAK,EAAE;AAHmC,SAAhC,CAAZ;;AAKA,QAAA,KAAI,CAACC,IAAL,CAAUP,KAAV;AACD,OAVD,EAUG,IAVH;AAWD,KAnBiD;AAqBlDQ,IAAAA,OAAO,EAAE;AACPC,MAAAA,MAAM,EAAE,kBAAwB;AAAA,YAAfA,OAAe,uEAAN,IAAM;;AAC9B,aAAKC,YAAL,CAAkB,CAAC,KAAKC,cAAL,GAAsBF,OAAM,GAAG,CAAH,GAAO,CAAnC,CAAD,CAAlB;AACD;AAHM;AArByC,GAApD;AAhCAG,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,SAAvB,CAAiC1B,aAAjC,GAAiDA,aAAjD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * Singleton that contains a stack of two logos.\n *\n * If online the white logo will be selected, if the webserver gets disconnected, the logo will turn red\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   let logo = qxapp.component.widget.LogoOnOff.getInstance();\n     logo.online(true/false);\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.widget.LogoOnOff\", {\n  extend: qx.ui.container.Stack,\n\n  type: \"singleton\",\n\n  construct: function() {\n    this.base(arguments);\n\n    [\n      \"qxapp/osparc-red.svg\",\n      \"qxapp/osparc-white.svg\"\n    ].forEach(logo => {\n      let image = new qx.ui.basic.Image(logo).set({\n        width: 92,\n        height: 32,\n        scale: true\n      });\n      this._add(image);\n    }, this);\n  },\n\n  members: {\n    online: function(online = true) {\n      this.setSelection([this.getSelectables()[online ? 1 : 0]]);\n    }\n  }\n});\n"
+  ]
+}

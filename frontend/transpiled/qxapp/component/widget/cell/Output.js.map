@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/cell/Output.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "core",
+    "Widget",
+    "construct",
+    "cellData",
+    "setHandler",
+    "properties",
+    "handler",
+    "check",
+    "nullable",
+    "members",
+    "getTitle",
+    "getHandler",
+    "getOutput",
+    "qxapp",
+    "component",
+    "widget",
+    "cell",
+    "Output"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oCAAhB,EAAsD;AACpDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,MADiC;AAGpDC,IAAAA,SAAS,EAAE,mBAASC,QAAT,EAAmB;AAC5B;AAEA,WAAKC,UAAL,CAAgBD,QAAhB;AACD,KAPmD;AASpDE,IAAAA,UAAU,EAAE;AACVC,MAAAA,OAAO,EAAE;AACPC,QAAAA,KAAK,EAAE,qCADA;AAEPC,QAAAA,QAAQ,EAAE;AAFH;AADC,KATwC;AAgBpDC,IAAAA,OAAO,EAAE;AACPC,MAAAA,QAAQ,EAAE,oBAAW;AACnB,eAAO,KAAKC,UAAL,GAAkBD,QAAlB,EAAP;AACD,OAHM;AAKPE,MAAAA,SAAS,EAAE,qBAAW;AACpB,eAAO,KAAKD,UAAL,GAAkBC,SAAlB,EAAP;AACD;AAPM;AAhB2C,GAAtD;AAAAC,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,IAAvB,CAA4BC,MAA5B,CAAmCtB,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "qx.Class.define(\"qxapp.component.widget.cell.Output\", {\n  extend: qx.ui.core.Widget,\n\n  construct: function(cellData) {\n    this.base(arguments);\n\n    this.setHandler(cellData);\n  },\n\n  properties: {\n    handler: {\n      check: \"qxapp.component.widget.cell.Handler\",\n      nullable: false\n    }\n  },\n\n  members: {\n    getTitle: function() {\n      return this.getHandler().getTitle();\n    },\n\n    getOutput: function() {\n      return this.getHandler().getOutput();\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/auth/Data.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "type",
+    "properties",
+    "auth",
+    "init",
+    "nullable",
+    "check",
+    "email",
+    "members",
+    "setToken",
+    "token",
+    "qxapp",
+    "utils",
+    "Utils",
+    "cookie",
+    "setCookie",
+    "setAuth",
+    "io",
+    "request",
+    "authentication",
+    "Token",
+    "resetToken",
+    "resetAuth",
+    "isLogout",
+    "getCookie",
+    "getUserName",
+    "Data",
+    "getInstance",
+    "getEmail",
+    "split"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;AAKAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iBAAhB,EAAmC;AACjCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MADiB;AAEjCC,IAAAA,IAAI,EAAE,WAF2B;AAIjCC,IAAAA,UAAU,EAAE;AACV;;;AAGAC,MAAAA,IAAI,EAAE;AACJC,QAAAA,IAAI,EAAE,IADF;AAEJC,QAAAA,QAAQ,EAAE,IAFN;AAGJC,QAAAA,KAAK,EAAE;AAHH,OAJI;;AAUV;;;AAGAC,MAAAA,KAAK,EAAE;AACLH,QAAAA,IAAI,EAAE,IADD;AAELC,QAAAA,QAAQ,EAAE,IAFL;AAGLC,QAAAA,KAAK,EAAE;AAHF;AAbG,KAJqB;AAwBjCE,IAAAA,OAAO,EAAE;AAEPC,MAAAA,QAAQ,EAAE,kBAASC,KAAT,EAAgB;AACxB,YAAIA,KAAJ,EAAW;AACTC,UAAAA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,MAAlB,CAAyBC,SAAzB,CAAmC,MAAnC,EAA2CL,KAA3C;AACA,eAAKM,OAAL,CAAa,IAAIL,KAAK,CAACM,EAAN,CAASC,OAAT,CAAiBC,cAAjB,CAAgCC,KAApC,CAA0CV,KAA1C,CAAb;AACD;AACF,OAPM;AASPW,MAAAA,UAAU,EAAE,sBAAW;AACrBV,QAAAA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,MAAlB,CAAyBC,SAAzB,CAAmC,MAAnC,EAA2C,QAA3C;AACA,aAAKO,SAAL;AACD,OAZM;AAcPC,MAAAA,QAAQ,EAAE,oBAAW;AACnB,eAAOZ,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,MAAlB,CAAyBU,SAAzB,CAAmC,MAAnC,MAA+C,QAAtD;AACD,OAhBM;AAkBPC,MAAAA,WAAW,EAAE,uBAAW;AACtB,YAAMlB,KAAK,GAAGI,KAAK,CAACR,IAAN,CAAWuB,IAAX,CAAgBC,WAAhB,GAA8BC,QAA9B,EAAd;;AACA,YAAIrB,KAAJ,EAAW;AACT,iBAAOA,KAAK,CAACsB,KAAN,CAAY,GAAZ,EAAiB,CAAjB,CAAP;AACD;;AACD,eAAO,MAAP;AACD;AAxBM;AAxBwB,GAAnC;AAtBAlB,EAAAA,KAAK,CAACR,IAAN,CAAWuB,IAAX,CAAgB/B,aAAhB,GAAgCA,aAAhC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Pedro Crespo (pcrespov)\n\n************************************************************************ */\n\n/** Authentication data\n *\n *  - Keeps data and state of current authenticated (logged in) user\n*/\n\nqx.Class.define(\"qxapp.auth.Data\", {\n  extend: qx.core.Object,\n  type: \"singleton\",\n\n  properties: {\n    /**\n     *  Basic authentification with a token\n    */\n    auth: {\n      init: null,\n      nullable: true,\n      check: \"qxapp.io.request.authentication.Token\"\n    },\n\n    /**\n     *  Email of logged in user, otherwise null\n    */\n    email: {\n      init: null,\n      nullable: true,\n      check: \"String\"\n    }\n  },\n\n  members: {\n\n    setToken: function(token) {\n      if (token) {\n        qxapp.utils.Utils.cookie.setCookie(\"user\", token);\n        this.setAuth(new qxapp.io.request.authentication.Token(token));\n      }\n    },\n\n    resetToken: function() {\n      qxapp.utils.Utils.cookie.setCookie(\"user\", \"logout\");\n      this.resetAuth();\n    },\n\n    isLogout: function() {\n      return qxapp.utils.Utils.cookie.getCookie(\"user\") === \"logout\";\n    },\n\n    getUserName: function() {\n      const email = qxapp.auth.Data.getInstance().getEmail();\n      if (email) {\n        return email.split(\"@\")[0];\n      }\n      return \"user\";\n    }\n  }\n});\n"
+  ]
+}

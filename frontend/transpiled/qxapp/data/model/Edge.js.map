@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/data/model/Edge.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "construct",
+    "edgeId",
+    "node1Id",
+    "node2Id",
+    "setEdgeId",
+    "qxapp",
+    "utils",
+    "Utils",
+    "uuidv4",
+    "setInputNodeId",
+    "setOutputNodeId",
+    "properties",
+    "check",
+    "nullable",
+    "inputNodeId",
+    "init",
+    "outputNodeId",
+    "data",
+    "model",
+    "Edge"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;;;;;;;;;;AAgBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uBAAhB,EAAyC;AACvCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MADuB;;AAGvC;;;;;AAKAC,IAAAA,SAAS,EAAE,mBAASC,MAAT,EAAiBC,OAAjB,EAA0BC,OAA1B,EAAmC;AAC5C;AAEA,WAAKC,SAAL,CAAeH,MAAM,IAAII,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,MAAlB,EAAzB;AACA,WAAKC,cAAL,CAAoBP,OAApB;AACA,WAAKQ,eAAL,CAAqBP,OAArB;AACD,KAdsC;AAgBvCQ,IAAAA,UAAU,EAAE;AACVV,MAAAA,MAAM,EAAE;AACNW,QAAAA,KAAK,EAAE,QADD;AAENC,QAAAA,QAAQ,EAAE;AAFJ,OADE;AAMVC,MAAAA,WAAW,EAAE;AACXC,QAAAA,IAAI,EAAE,IADK;AAEXH,QAAAA,KAAK,EAAE;AAFI,OANH;AAWVI,MAAAA,YAAY,EAAE;AACZD,QAAAA,IAAI,EAAE,IADM;AAEZH,QAAAA,KAAK,EAAE;AAFK;AAXJ;AAhB2B,GAAzC;AAjCAP,EAAAA,KAAK,CAACY,IAAN,CAAWC,KAAX,CAAiBC,IAAjB,CAAsBzB,aAAtB,GAAsCA,aAAtC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * Class that stores Edge data.\n *\n *                                    -> {EDGES}\n * STUDY -> METADATA + WORKBENCH ->|\n *                                    -> {LINKS}\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   let edge = new qxapp.data.model.Edge(edgeId, node1Id, node2Id);\n * </pre>\n */\n\nqx.Class.define(\"qxapp.data.model.Edge\", {\n  extend: qx.core.Object,\n\n  /**\n    * @param edgeId {String} uuid if the edge. If not provided, a random one will be assigned\n    * @param node1Id {String} uuid of the node where the edge comes from\n    * @param node2Id {String} uuid of the node where the edge goes to\n  */\n  construct: function(edgeId, node1Id, node2Id) {\n    this.base();\n\n    this.setEdgeId(edgeId || qxapp.utils.Utils.uuidv4());\n    this.setInputNodeId(node1Id);\n    this.setOutputNodeId(node2Id);\n  },\n\n  properties: {\n    edgeId: {\n      check: \"String\",\n      nullable: false\n    },\n\n    inputNodeId: {\n      init: null,\n      check: \"String\"\n    },\n\n    outputNodeId: {\n      init: null,\n      check: \"String\"\n    }\n  }\n});\n"
+  ]
+}

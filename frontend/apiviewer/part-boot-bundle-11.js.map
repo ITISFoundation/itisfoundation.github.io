@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "../transpiled/qx/io/request/authentication/IAuthentication.js"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;;;AAAC,EAAA,EAAC,CAAC,SAAF,CAAY,oBAAZ,CAAiC,aAAjC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGA,EAAA,EAAC,CAAC,SAAF,CAAY,MAAZ,CAAmB,8CAAnB,EACA;AAEC,IAAA,OAAO,EACP;AACE;;;;;;;AAOA,MAAA,cAAc,EAAE,0BAAW,CAAE;AAR/B;AAHD,GADA;AArBA,EAAA,EAAC,CAAC,EAAF,CAAK,OAAL,CAAa,cAAb,CAA4B,eAA5B,CAA4C,aAA5C,GAA4D,aAA5D",
+  "file": "build-output/apiviewer/part-boot-bundle-11.js.map",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\n/**\n * Interface of an authentication delegate.\n */\nqx.Interface.define(\"qx.io.request.authentication.IAuthentication\",\n{\n\n  members :\n  {\n    /**\n     * Headers to include in request for authentication purposes.\n     *\n     * @return {Map[]} Array of maps. Each map represent a header and\n     *          must have the properties <code>key</code> and <code>value</code>\n     *         with a value of type string.\n     */\n    getAuthHeaders: function() {}\n  }\n});\n"
+  ]
+}

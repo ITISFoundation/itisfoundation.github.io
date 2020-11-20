@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/dev/fake/neuroman/Data.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "statics",
+    "itemList",
+    "key",
+    "label",
+    "thumbnail",
+    "compare",
+    "a",
+    "b",
+    "getItemList",
+    "qxapp",
+    "dev",
+    "fake",
+    "neuroman",
+    "Data",
+    "sort"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,8BAAhB,EAAgD;AAC9CC,IAAAA,IAAI,EAAE,QADwC;AAG9CC,IAAAA,OAAO,EAAE;AACPC,MAAAA,QAAQ,EAAE;AACR,iCAAyB,CAAC;AACxBC,UAAAA,GAAG,EAAE,qBADmB;AAExBC,UAAAA,KAAK,EAAE,wBAFiB;AAGxBC,UAAAA,SAAS,EAAE;AAHa,SAAD,EAItB;AACDF,UAAAA,GAAG,EAAE,0BADJ;AAEDC,UAAAA,KAAK,EAAE,6BAFN;AAGDC,UAAAA,SAAS,EAAE;AAHV,SAJsB,EAQtB;AACDF,UAAAA,GAAG,EAAE,yBADJ;AAEDC,UAAAA,KAAK,EAAE,4BAFN;AAGDC,UAAAA,SAAS,EAAE;AAHV,SARsB,EAYtB;AACDF,UAAAA,GAAG,EAAE,oBADJ;AAEDC,UAAAA,KAAK,EAAE,uBAFN;AAGDC,UAAAA,SAAS,EAAE;AAHV,SAZsB,EAgBtB;AACDF,UAAAA,GAAG,EAAE,wBADJ;AAEDC,UAAAA,KAAK,EAAE,2BAFN;AAGDC,UAAAA,SAAS,EAAE;AAHV,SAhBsB,EAoBtB;AACDF,UAAAA,GAAG,EAAE,gBADJ;AAEDC,UAAAA,KAAK,EAAE,2BAFN;AAGDC,UAAAA,SAAS,EAAE;AAHV,SApBsB;AADjB,OADH;AA6BPC,MAAAA,OAAO,EAAE,iBAASC,CAAT,EAAYC,CAAZ,EAAe;AACtB,YAAID,CAAC,CAACH,KAAF,GAAUI,CAAC,CAACJ,KAAhB,EAAuB;AACrB,iBAAO,CAAC,CAAR;AACD;;AACD,YAAIG,CAAC,CAACH,KAAF,GAAUI,CAAC,CAACJ,KAAhB,EAAuB;AACrB,iBAAO,CAAP;AACD;;AACD,eAAO,CAAP;AACD,OArCM;AAuCPK,MAAAA,WAAW,EAAE,qBAASN,GAAT,EAAc;AACzB,YAAID,QAAQ,GAAGQ,KAAK,CAACC,GAAN,CAAUC,IAAV,CAAeC,QAAf,CAAwBC,IAAxB,CAA6BZ,QAA7B,CAAsCC,GAAtC,CAAf;AACAD,QAAAA,QAAQ,CAACa,IAAT,CAAc,KAAKT,OAAnB;AACA,eAAOJ,QAAP;AACD,OA3CM,CA4CP;;AA5CO;AAHqC,GAAhD;AAAAQ,EAAAA,KAAK,CAACC,GAAN,CAAUC,IAAV,CAAeC,QAAf,CAAwBC,IAAxB,CAA6BjB,aAA7B,GAA6CA,aAA7C",
+  "sourcesContent": [
+    "qx.Class.define(\"qxapp.dev.fake.neuroman.Data\", {\n  type: \"static\",\n\n  statics: {\n    itemList: {\n      \"defaultNeuromanModels\": [{\n        key: \"Model-Neuroman-UUID\",\n        label: \"DemoDec_Neuroman.smash\",\n        thumbnail: \"qxapp/img1.jpg\"\n      }, {\n        key: \"Model-Head-Neuroman-UUID\",\n        label: \"DemoDec_Head_Neuroman.smash\",\n        thumbnail: \"qxapp/img2.jpg\"\n      }, {\n        key: \"Model-Head-Modeler-UUID\",\n        label: \"DemoDec_Head_Modeler.smash\",\n        thumbnail: \"qxapp/img3.jpg\"\n      }, {\n        key: \"Model-Head-LF-UUID\",\n        label: \"DemoDec_Head_LF.smash\",\n        thumbnail: \"qxapp/img4.jpg\"\n      }, {\n        key: \"Model-Head-Neuron-UUID\",\n        label: \"DemoDec_Head_Neuron.smash\",\n        thumbnail: \"qxapp/img5.jpg\"\n      }, {\n        key: \"Rat-Light-UUID\",\n        label: \"ratmodel_simplified.smash\",\n        thumbnail: \"qxapp/img6.jpg\"\n      }]\n    },\n\n    compare: function(a, b) {\n      if (a.label < b.label) {\n        return -1;\n      }\n      if (a.label > b.label) {\n        return 1;\n      }\n      return 0;\n    },\n\n    getItemList: function(key) {\n      let itemList = qxapp.dev.fake.neuroman.Data.itemList[key];\n      itemList.sort(this.compare);\n      return itemList;\n    }\n  } // statics\n\n});\n"
+  ]
+}

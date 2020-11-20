@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/JsonTreeWidget.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "basic",
+    "Label",
+    "construct",
+    "data",
+    "prettyJson",
+    "JSON",
+    "stringify",
+    "replace",
+    "set",
+    "rich",
+    "qxapp",
+    "component",
+    "widget",
+    "JsonTreeWidget"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;;;;;;;;AAaAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uCAAhB,EAAyD;AACvDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,KAAN,CAAYC,KADmC;;AAGvD;;;AAGAC,IAAAA,SAAS,EAAE,mBAASC,IAAT,EAAe;AACxB,UAAMC,UAAU,GAAGC,IAAI,CAACC,SAAL,CAAeH,IAAf,EAAqB,IAArB,EAA2B,QAA3B,EAAqCI,OAArC,CAA6C,MAA7C,EAAqD,MAArD,CAAnB;AACA,+CAAqBH,UAArB;AACA,WAAKI,GAAL,CAAS;AACPC,QAAAA,IAAI,EAAE;AADC,OAAT;AAGD;AAZsD,GAAzD;AA/BAC,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,cAAvB,CAAsClB,aAAtC,GAAsDA,aAAtD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Widget containing a JsonTreeViewer dom element\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   let jsonTreeWidget = new qxapp.component.widget.JsonTreeWidget(data);\n *   this.getRoot().add(jsonTreeWidget);\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.widget.JsonTreeWidget\", {\n  extend: qx.ui.basic.Label,\n\n  /**\n   * @param data {Object} Json object to be displayed by JsonTreeViewer\n   */\n  construct: function(data) {\n    const prettyJson = JSON.stringify(data, null, \"&emsp;\").replace(/\\n/ig, \"<br>\");\n    this.base(arguments, prettyJson);\n    this.set({\n      rich: true\n    });\n  }\n});\n"
+  ]
+}

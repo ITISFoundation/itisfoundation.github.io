@@ -1,0 +1,88 @@
+{
+  "className": "qxapp.dev.Placeholders",
+  "packageName": "qxapp.dev",
+  "name": "Placeholders",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 21,
+        "column": 0
+      },
+      "end": {
+        "line": 59,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqxapp - the simcore frontend\n\nhttps:\n\nCopyright:\n2018 IT'IS Foundation, https:\n\nLicense:\nMIT: https:\n\nAuthors:\nPedro Crespo (pcrespov)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "eslint new-cap: [2, {capIsNewExceptions: [\"B\", \"D\", \"J\", \"K\", \"L\", \"MD5\"]}]"
+        },
+        {
+          "name": "@description",
+          "body": "eslint operator-assignment: [\"off\"]"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "getIcon": {
+      "location": {
+        "start": {
+          "line": 31,
+          "column": 4
+        },
+        "end": {
+          "line": 41,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns URL to an icon in collection\n\nSee https:"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getImage": {
+      "location": {
+        "start": {
+          "line": 49,
+          "column": 4
+        },
+        "end": {
+          "line": 57,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns URL to a rectangular place-holder image of given\ndimensions.\n\nSee https:"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

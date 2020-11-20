@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/io/request/ApiRequest.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "io",
+    "request",
+    "Xhr",
+    "construct",
+    "url",
+    "method",
+    "baseURL",
+    "qxapp",
+    "rest",
+    "AbstractResource",
+    "API",
+    "set",
+    "accept",
+    "setRequestHeader",
+    "ApiRequest"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6BAAhB,EAA+C;AAC7CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,GADuB;AAG7CC,IAAAA,SAAS,EAAE,mBAASC,GAAT,EAAcC,MAAd,EAAsB;AAC/B,UAAMC,OAAO,GAAGC,KAAK,CAACP,EAAN,CAASQ,IAAT,CAAcC,gBAAd,CAA+BC,GAA/C;AAEA,+CAAqBJ,OAAO,GAACF,GAA7B,EAAkCC,MAAlC;AACA,WAAKM,GAAL,CAAS;AACPC,QAAAA,MAAM,EAAE;AADD,OAAT;AAIA,WAAKC,gBAAL,CAAsB,cAAtB,EAAsC,kBAAtC;AACD;AAZ4C,GAA/C;AApBAN,EAAAA,KAAK,CAACP,EAAN,CAASC,OAAT,CAAiBa,UAAjB,CAA4BlB,aAA5B,GAA4CA,aAA5C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Pedro Crespo (pcrespov)\n\n************************************************************************ */\n\n/**\n * HTTP requests to simcore's rest API\n */\nqx.Class.define(\"qxapp.io.request.ApiRequest\", {\n  extend: qx.io.request.Xhr,\n\n  construct: function(url, method) {\n    const baseURL = qxapp.io.rest.AbstractResource.API;\n\n    this.base(arguments, baseURL+url, method);\n    this.set({\n      accept: \"application/json\"\n    });\n\n    this.setRequestHeader(\"Content-Type\", \"application/json\");\n  }\n});\n"
+  ]
+}

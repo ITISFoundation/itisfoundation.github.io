@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/dev/fake/stimulationSelectivity/Data.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "statics",
+    "itemList",
+    "key",
+    "label",
+    "compare",
+    "a",
+    "b",
+    "getItemList",
+    "qxapp",
+    "dev",
+    "fake",
+    "stimulationSelectivity",
+    "Data",
+    "sort"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4CAAhB,EAA8D;AAC5DC,IAAAA,IAAI,EAAE,QADsD;AAG5DC,IAAAA,OAAO,EAAE;AACPC,MAAAA,QAAQ,EAAE,CAAC;AACTC,QAAAA,GAAG,EAAE,mBADI;AAETC,QAAAA,KAAK,EAAE;AAFE,OAAD,CADH;AAMPC,MAAAA,OAAO,EAAE,iBAASC,CAAT,EAAYC,CAAZ,EAAe;AACtB,YAAID,CAAC,CAACF,KAAF,GAAUG,CAAC,CAACH,KAAhB,EAAuB;AACrB,iBAAO,CAAC,CAAR;AACD;;AACD,YAAIE,CAAC,CAACF,KAAF,GAAUG,CAAC,CAACH,KAAhB,EAAuB;AACrB,iBAAO,CAAP;AACD;;AACD,eAAO,CAAP;AACD,OAdM;AAgBPI,MAAAA,WAAW,EAAE,uBAAW;AACtB,YAAIN,QAAQ,GAAGO,KAAK,CAACC,GAAN,CAAUC,IAAV,CAAeC,sBAAf,CAAsCC,IAAtC,CAA2CX,QAA1D;AACAA,QAAAA,QAAQ,CAACY,IAAT,CAAc,KAAKT,OAAnB;AACA,eAAOH,QAAP;AACD,OApBM,CAqBP;;AArBO;AAHmD,GAA9D;AAAAO,EAAAA,KAAK,CAACC,GAAN,CAAUC,IAAV,CAAeC,sBAAf,CAAsCC,IAAtC,CAA2ChB,aAA3C,GAA2DA,aAA3D",
+  "sourcesContent": [
+    "qx.Class.define(\"qxapp.dev.fake.stimulationSelectivity.Data\", {\n  type: \"static\",\n\n  statics: {\n    itemList: [{\n      key: \"StSeSubgroup-UUID\",\n      label: \"Subgroup\"\n    }],\n\n    compare: function(a, b) {\n      if (a.label < b.label) {\n        return -1;\n      }\n      if (a.label > b.label) {\n        return 1;\n      }\n      return 0;\n    },\n\n    getItemList: function() {\n      let itemList = qxapp.dev.fake.stimulationSelectivity.Data.itemList;\n      itemList.sort(this.compare);\n      return itemList;\n    }\n  } // statics\n\n});\n"
+  ]
+}

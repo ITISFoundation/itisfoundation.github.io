@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/statics/NodeStatics.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "statics",
+    "CATEGORIES",
+    "postpro",
+    "label",
+    "icon",
+    "notebook",
+    "solver",
+    "simulator",
+    "modeling",
+    "data",
+    "TYPES",
+    "computational",
+    "dynamic",
+    "container",
+    "getCategory",
+    "category",
+    "trim",
+    "toLowerCase",
+    "getType",
+    "type",
+    "qxapp",
+    "NodeStatics"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;AAOAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EAA6C;AAC3CC,IAAAA,OAAO,EAAE;AACPC,MAAAA,UAAU,EAAE;AACVC,QAAAA,OAAO,EAAE;AACPC,UAAAA,KAAK,EAAE,SADA;AAEPC,UAAAA,IAAI,EAAE;AAFC,SADC;AAKVC,QAAAA,QAAQ,EAAE;AACRF,UAAAA,KAAK,EAAE,UADC;AAERC,UAAAA,IAAI,EAAE;AAFE,SALA;AASVE,QAAAA,MAAM,EAAE;AACNH,UAAAA,KAAK,EAAE,QADD;AAENC,UAAAA,IAAI,EAAE;AAFA,SATE;AAaVG,QAAAA,SAAS,EAAE;AACTJ,UAAAA,KAAK,EAAE,WADE;AAETC,UAAAA,IAAI,EAAE;AAFG,SAbD;AAiBVI,QAAAA,QAAQ,EAAE;AACRL,UAAAA,KAAK,EAAE,UADC;AAERC,UAAAA,IAAI,EAAE;AAFE,SAjBA;AAqBVK,QAAAA,IAAI,EAAE;AACJN,UAAAA,KAAK,EAAE,MADH;AAEJC,UAAAA,IAAI,EAAE;AAFF;AArBI,OADL;AA2BPM,MAAAA,KAAK,EAAE;AACLC,QAAAA,aAAa,EAAE;AACbR,UAAAA,KAAK,EAAE,eADM;AAEbC,UAAAA,IAAI,EAAE;AAFO,SADV;AAKLQ,QAAAA,OAAO,EAAE;AACPT,UAAAA,KAAK,EAAE,aADA;AAEPC,UAAAA,IAAI,EAAE;AAFC,SALJ;AASLS,QAAAA,SAAS,EAAE;AACTV,UAAAA,KAAK,EAAE,gBADE;AAETC,UAAAA,IAAI,EAAE;AAFG;AATN,OA3BA;AAyCPU,MAAAA,WAAW,EAAE,qBAASC,QAAT,EAAmB;AAC9B,eAAO,0BAAYd,UAAZ,CAAuBc,QAAQ,CAACC,IAAT,GAAgBC,WAAhB,EAAvB,CAAP;AACD,OA3CM;AA4CPC,MAAAA,OAAO,EAAE,iBAASC,IAAT,EAAe;AACtB,eAAO,0BAAYT,KAAZ,CAAkBS,IAAI,CAACH,IAAL,GAAYC,WAAZ,EAAlB,CAAP;AACD;AA9CM;AADkC,GAA7C;AAPAG,EAAAA,KAAK,CAACpB,OAAN,CAAcqB,WAAd,CAA0BxB,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/*\n * oSPARC - The SIMCORE frontend - https://osparc.io\n * Copyright: 2019 IT'IS Foundation - https://itis.swiss\n * License: MIT - https://opensource.org/licenses/MIT\n * Authors: Ignacio Pascual (ignapas)\n */\n\nqx.Class.define(\"qxapp.statics.NodeStatics\", {\n  statics: {\n    CATEGORIES: {\n      postpro: {\n        label: \"Postpro\",\n        icon: \"@FontAwesome5Solid/chart-bar/\"\n      },\n      notebook: {\n        label: \"Notebook\",\n        icon: \"@FontAwesome5Solid/file-code/\"\n      },\n      solver: {\n        label: \"Solver\",\n        icon: \"@FontAwesome5Solid/calculator/\"\n      },\n      simulator: {\n        label: \"Simulator\",\n        icon: \"@FontAwesome5Solid/brain/\"\n      },\n      modeling: {\n        label: \"Modeling\",\n        icon: \"@FontAwesome5Solid/cube/\"\n      },\n      data: {\n        label: \"Data\",\n        icon: \"@FontAwesome5Solid/file/\"\n      }\n    },\n    TYPES: {\n      computational: {\n        label: \"Computational\",\n        icon: \"@FontAwesome5Solid/cogs/\"\n      },\n      dynamic: {\n        label: \"Interactive\",\n        icon: \"@FontAwesome5Solid/mouse-pointer/\"\n      },\n      container: {\n        label: \"Group of nodes\",\n        icon: \"@FontAwesome5Solid/box-open/\"\n      }\n    },\n    getCategory: function(category) {\n      return this.self().CATEGORIES[category.trim().toLowerCase()];\n    },\n    getType: function(type) {\n      return this.self().TYPES[type.trim().toLowerCase()];\n    }\n  }\n});\n"
+  ]
+}

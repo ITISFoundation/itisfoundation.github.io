@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/test/DemoTest.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MRequirements",
+    "MMock",
+    "members",
+    "setUp",
+    "console",
+    "debug",
+    "tearDown",
+    "getSandbox",
+    "restore",
+    "testAdvanced",
+    "a",
+    "b",
+    "assertIdentical",
+    "assertInRange",
+    "obj",
+    "mymethod",
+    "spy",
+    "assertCalled",
+    "testWithRequirements",
+    "require",
+    "log",
+    "Logger",
+    "testWithUI",
+    "hasChrome",
+    "hasGuiApp",
+    "qxapp",
+    "test",
+    "DemoTest"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;AAMAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,qBAAhB,EACE;AACEC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADtB;AAEEC,IAAAA,OAAO,EAAE,CAACV,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYG,aAAb,EAA4BX,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYI,KAAxC,CAFX;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAE,iBAAW;AAChBC,QAAAA,OAAO,CAACC,KAAR,CAAc,gBAAd;AACA,aAAKA,KAAL,CAAW,gBAAX;AACD,OAJH;AAMEC,MAAAA,QAAQ,EAAE,oBAAW;AACnBF,QAAAA,OAAO,CAACC,KAAR,CAAc,eAAd;AACA,aAAKA,KAAL,CAAW,eAAX;AACA,aAAKE,UAAL,GAAkBC,OAAlB;AACD,OAVH;;AAYE;;;;;AAMAC,MAAAA,YAAY,EAAE,wBAAW;AACvB,YAAIC,CAAC,GAAG,CAAR;AACA,YAAIC,CAAC,GAAGD,CAAR;AACA,aAAKE,eAAL,CAAqBF,CAArB,EAAwBC,CAAxB,EAA2B,0CAA3B;AACA,aAAKE,aAAL,CAAmB,CAAnB,EAAsB,CAAtB,EAAyB,EAAzB,EAA6B,qDAA7B;AACD,OAvBH;;AAyBE;;;;;;;AAOA;;;;;AAMA,iCAA2B,+BAAW;AACpC,YAAIC,GAAG,GAAG;AACRC,UAAAA,QAAQ,EAAE,oBAAW,CAAG;AADhB,SAAV;AAGA,aAAKC,GAAL,CAASF,GAAT,EAAc,UAAd,EAJoC,CAMpC;AACA;AACA;;AACAA,QAAAA,GAAG,CAACC,QAAJ;AAEA,aAAKE,YAAL,CAAkBH,GAAG,CAACC,QAAtB;AACD,OAlDH;;AAqDE;;;;;AAMAG,MAAAA,oBAAoB,EAAE,gCAAW;AAC/B,aAAKC,OAAL,CAAa,CAAC,UAAD,CAAb,EAD+B,CAE/B;;;AACA,aAAKd,KAAL,CAAW,0BAAX;AACAhB,QAAAA,EAAE,CAAC+B,GAAH,CAAOC,MAAP,CAAchB,KAAd,CAAoB,iBAApB;AACD,OAhEH;AAkEEiB,MAAAA,UAAU,EAAE,sBAAW;AACrBlB,QAAAA,OAAO,CAACC,KAAR,CAAc,sBAAd,EAAsC,KAAKkB,SAAL,EAAtC,EAAwD,KAAKC,SAAL,EAAxD;;AAEA,aAAKL,OAAL,CAAa,CAAC,QAAD,EAAW,QAAX,CAAb;;AACA,aAAKd,KAAL,CAAW,iBAAX;AACD,OAvEH,CAuEG;;AAED;;;;;;AAMA;;;;;;;;;;;;;;;;;;;;;;;;;AA/EF;AALF,GADF;AAvBAoB,EAAAA,KAAK,CAACC,IAAN,CAAWC,QAAX,CAAoBnC,aAApB,GAAoCA,aAApC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Pedro Crespo (pcrespov)\n\n************************************************************************ */\n\n/**\n * To setup test\n *\n *\n *\n */\nqx.Class.define(\"qxapp.test.DemoTest\",\n  {\n    extend: qx.dev.unit.TestCase,\n    include: [qx.dev.unit.MRequirements, qx.dev.unit.MMock],\n\n    members:\n    {\n      setUp: function() {\n        console.debug(\"Setting up .. \");\n        this.debug(\"Setting up ...\");\n      },\n\n      tearDown: function() {\n        console.debug(\"Tear down .. \");\n        this.debug(\"Tear down ...\");\n        this.getSandbox().restore();\n      },\n\n      /*\n      ---------------------- -----------------------------------------------------\n        TESTS  qx.dev.unit.TestCase assert functions\n      ---------------------------------------------------------------------------\n      */\n\n      testAdvanced: function() {\n        var a = 3;\n        var b = a;\n        this.assertIdentical(a, b, \"A rose by any other name is still a rose\");\n        this.assertInRange(3, 1, 10, \"You must be kidding, 3 can never be outside [1,10]!\");\n      },\n\n      /*\n      testFail: function() {\n        var ab = 3;\n        this.assertEquals(3, ab);\n      },\n      */\n\n      /*\n      ---------------------- -----------------------------------------------------\n        TESTS  with fakes. See qx.dev.unit.MMock\n      ---------------------------------------------------------------------------\n      */\n\n      \"test: spy this function\": function() {\n        var obj = {\n          mymethod: function() { }\n        };\n        this.spy(obj, \"mymethod\");\n\n        // run function to be tested\n        // foo(spy);\n        // spy();\n        obj.mymethod();\n\n        this.assertCalled(obj.mymethod);\n      },\n\n\n      /*\n      ---------------------- -----------------------------------------------------\n        TESTS  with requirements. See qqx.dev.unit.MRequirements\n      ---------------------------------------------------------------------------\n      */\n\n      testWithRequirements: function() {\n        this.require([\"qx.debug\"]);\n        // test code goes here\n        this.debug(\"This is running in debug\");\n        qx.log.Logger.debug(\"This is running\");\n      },\n\n      testWithUI: function() {\n        console.debug(\"Requirement helpers:\", this.hasChrome(), this.hasGuiApp());\n\n        this.require([\"chrome\", \"guiApp\"]);\n        this.debug(\"this is running\");\n      }//  ,\n\n      /*\n      ---------------------- -----------------------------------------------------\n        TESTS async\n      ---------------------------------------------------------------------------\n      */\n\n      /*\n      \"test: GET api/auth async\": function() {\n        this.useFakeXMLHttpRequest();\n\n        var req = new qx.io.request.Xhr(\"api/auth\", \"GET\");\n        var fakeReq = this.getRequests()[0];\n\n        req.addListener(\"success\", function(e) {\n          this.resume(function() {\n            // checks after async------------------------\n            this.assertEquals(200, req.status);\n\n            var body = (req.getBody()==\"true\");\n            this.assertEquals(body, true);\n\n            this.assertCalled(req.onreadystatechange);\n            this.assertEquals(\"Response\", req.responseText);\n            //-------------------------------------------\n          }, this);\n        }, this);\n\n        this.assertEventFired(req, \"statusError\", function() {\n          // The function which will be invoked and which fires the event.\n          fakeReq.respond(200, {}, \"true\");\n        });\n        req.send();\n\n        this.assertEquals(fakeReq, req.getTransport().getRequest());\n        this.wait(10000);\n      } */\n    }\n  });\n"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/test/TestUtils.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testEncDecoding",
+    "got",
+    "util",
+    "Base64",
+    "decode",
+    "encode",
+    "split",
+    "assertIdentical",
+    "qxapp",
+    "test",
+    "TestUtils"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EAAwC;AACtCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADkB;AAItCC,IAAAA,OAAO,EACL;AACE;;;;;AAMAC,MAAAA,eAAe,EAAE,2BAAW;AAC1B,YAAIC,GAAG,GAAGZ,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBf,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,SAAtB,CAAtB,EAAwDC,KAAxD,CAA8D,GAA9D,CAAV;AACA,aAAKC,eAAL,CAAqBN,GAAG,CAAC,CAAD,CAAxB,EAA6B,KAA7B;AACA,aAAKM,eAAL,CAAqBN,GAAG,CAAC,CAAD,CAAxB,EAA6B,KAA7B;AAEAA,QAAAA,GAAG,GAAGZ,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBf,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,MAAtB,CAAtB,EAAqDC,KAArD,CAA2D,GAA3D,CAAN;AACA,aAAKC,eAAL,CAAqBN,GAAG,CAAC,CAAD,CAAxB,EAA6B,KAA7B;AACA,aAAKM,eAAL,CAAqBN,GAAG,CAAC,CAAD,CAAxB,EAA6B,EAA7B;AAEAA,QAAAA,GAAG,GAAGZ,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBf,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,SAAS,IAA/B,CAAtB,EAA4DC,KAA5D,CAAkE,GAAlE,CAAN;AACA,aAAKC,eAAL,CAAqBN,GAAG,CAAC,CAAD,CAAxB,EAA6B,KAA7B;AACA,aAAKM,eAAL,CAAqBN,GAAG,CAAC,CAAD,CAAxB,EAA6B,MAA7B;AACD;AAnBH;AALoC,GAAxC;AApBAO,EAAAA,KAAK,CAACC,IAAN,CAAWC,SAAX,CAAqBlB,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Pedro Crespo (pcrespov)\n\n************************************************************************ */\n\n/**\n *\n */\nqx.Class.define(\"qxapp.test.TestUtils\", {\n  extend: qx.dev.unit.TestCase,\n\n\n  members:\n    {\n      /*\n      ---------------------- -----------------------------------------------------\n        TESTS\n      ---------------------------------------------------------------------------\n      */\n\n      testEncDecoding: function() {\n        var got = qx.util.Base64.decode(qx.util.Base64.encode(\"foo:bar\")).split(\":\");\n        this.assertIdentical(got[0], \"foo\");\n        this.assertIdentical(got[1], \"bar\");\n\n        got = qx.util.Base64.decode(qx.util.Base64.encode(\"foo:\")).split(\":\");\n        this.assertIdentical(got[0], \"foo\");\n        this.assertIdentical(got[1], \"\");\n\n        got = qx.util.Base64.decode(qx.util.Base64.encode(\"foo:\" + null)).split(\":\");\n        this.assertIdentical(got[0], \"foo\");\n        this.assertIdentical(got[1], \"null\");\n      }\n\n    }\n});\n"
+  ]
+}

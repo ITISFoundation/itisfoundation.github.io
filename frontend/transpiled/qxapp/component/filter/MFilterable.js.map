@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/filter/MFilterable.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "members",
+    "subscribeToFilterGroup",
+    "groupId",
+    "msgName",
+    "qxapp",
+    "utils",
+    "Utils",
+    "capitalize",
+    "event",
+    "message",
+    "Bus",
+    "getInstance",
+    "subscribe",
+    "__subscriber",
+    "msg",
+    "_shouldReactToFilter",
+    "getData",
+    "_shouldApplyFilter",
+    "_filter",
+    "_unfilter",
+    "component",
+    "filter",
+    "MFilterable"
+  ],
+  "mappings": ";;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oCAAhB,EAAsD;AACpDC,IAAAA,OAAO,EAAE;AACP;;;;;AAKAC,MAAAA,sBAAsB,EAAE,gCAASC,OAAT,EAAkB;AACxC,YAAMC,OAAO,GAAGC,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,UAAlB,CAA6BL,OAA7B,EAAsC,QAAtC,CAAhB;AACAR,QAAAA,EAAE,CAACc,KAAH,CAASC,OAAT,CAAiBC,GAAjB,CAAqBC,WAArB,GAAmCC,SAAnC,CAA6CT,OAA7C,EAAsD,KAAKU,YAA3D,EAAyE,IAAzE;AACD,OATM;;AAUP;;;;;;;AAOAA,MAAAA,YAAY,EAAE,sBAASC,GAAT,EAAc;AAC1B,YAAI,KAAKC,oBAAL,CAA0BD,GAAG,CAACE,OAAJ,EAA1B,EAAyCF,GAAzC,KAAiD,KAAKG,kBAAL,CAAwBH,GAAG,CAACE,OAAJ,EAAxB,EAAuCF,GAAvC,CAArD,EAAkG;AAChG,eAAKI,OAAL,CAAaJ,GAAG,CAACE,OAAJ,EAAb,EAA4BF,GAA5B;AACD,SAFD,MAEO;AACL,eAAKK,SAAL,CAAeL,GAAG,CAACE,OAAJ,EAAf,EAA8BF,GAA9B;AACD;AACF;AAvBM;AAD2C,GAAtD;AApBAV,EAAAA,KAAK,CAACgB,SAAN,CAAgBC,MAAhB,CAAuBC,WAAvB,CAAmCzB,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Common functions for all elements that can be filtered\n */\nqx.Mixin.define(\"qxapp.component.filter.MFilterable\", {\n  members: {\n    /**\n     * Used to subscribe the element to a filter group.\n     *\n     * @param {String} groupId Id of the filter group to subscribe to.\n     */\n    subscribeToFilterGroup: function(groupId) {\n      const msgName = qxapp.utils.Utils.capitalize(groupId, \"filter\");\n      qx.event.message.Bus.getInstance().subscribe(msgName, this.__subscriber, this);\n    },\n    /**\n     * Subscriber function for incoming messages. It implements the common filtering workflow of every\n     * filterable GUI element: If the filter state is appropiate, compare it with the own state and act\n     * accordingly by applying the filter or removing it.\n     *\n     * @param {qx.event.message.Message} msg Message dispatched.\n     */\n    __subscriber: function(msg) {\n      if (this._shouldReactToFilter(msg.getData(), msg) && this._shouldApplyFilter(msg.getData(), msg)) {\n        this._filter(msg.getData(), msg);\n      } else {\n        this._unfilter(msg.getData(), msg);\n      }\n    }\n  }\n});\n"
+  ]
+}

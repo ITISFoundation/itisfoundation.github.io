@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "../transpiled/qx/theme/icon/Oxygen.js"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;;;AAAC,EAAA,EAAC,CAAC,SAAF,CAAY,oBAAZ,CAAiC,aAAjC;;AAAA;;;;;;;;;;;;;;;;;;;AAkBA;;;AAGA,EAAA,EAAC,CAAC,KAAF,CAAQ,MAAR,CAAe,sBAAf,EACA;AACC,IAAA,KAAK,EAAG,QADT;AAEC,IAAA,OAAO,EAAG;AACR,cAAS;AADD;AAFX,GADA;AArBA,EAAA,EAAC,CAAC,KAAF,CAAQ,IAAR,CAAa,MAAb,CAAoB,aAApB,GAAoC,aAApC",
+  "file": "build-output/qxapp/part-boot-bundle-57.js.map",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Andreas Ecker (ecker)\n\n************************************************************************ */\n/**\n * KDE Oxygen icons\n */\nqx.Theme.define(\"qx.theme.icon.Oxygen\",\n{\n  title : \"Oxygen\",\n  aliases : {\n    \"icon\" : \"qx/icon/Oxygen\"\n  }\n});\n"
+  ]
+}

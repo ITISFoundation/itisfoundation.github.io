@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/filter/IFilterable.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Interface",
+    "define",
+    "members",
+    "_filter",
+    "data",
+    "msg",
+    "assertArgumentsCount",
+    "arguments",
+    "assertInstance",
+    "event",
+    "message",
+    "Message",
+    "_unfilter",
+    "_shouldReactToFilter",
+    "_shouldApplyFilter",
+    "qxapp",
+    "component",
+    "filter",
+    "IFilterable"
+  ],
+  "mappings": ";;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,SAAH,CAAaC,MAAb,CAAoB,oCAApB,EAA0D;AACxDC,IAAAA,OAAO,EAAC;AACN;;;;;;;AAOAC,MAAAA,OAAO,EAAE,iBAASC,IAAT,EAAeC,GAAf,EAAoB;AAC3B,aAAKC,oBAAL,CAA0BC,SAA1B,EAAqC,CAArC,EAAwC,CAAxC;;AACA,YAAIF,GAAJ,EAAS;AACP,eAAKG,cAAL,CAAoBH,GAApB,EAAyBT,EAAE,CAACa,KAAH,CAASC,OAAT,CAAiBC,OAA1C;AACD;AACF,OAbK;;AAeN;;;;;;;AAOAC,MAAAA,SAAS,EAAE,mBAASR,IAAT,EAAeC,GAAf,EAAoB;AAC7B,aAAKC,oBAAL,CAA0BC,SAA1B,EAAqC,CAArC,EAAwC,CAAxC;;AACA,YAAIF,GAAJ,EAAS;AACP,eAAKG,cAAL,CAAoBH,GAApB,EAAyBT,EAAE,CAACa,KAAH,CAASC,OAAT,CAAiBC,OAA1C;AACD;AACF,OA3BK;;AA6BN;;;;;;;;;;AAUAE,MAAAA,oBAAoB,EAAE,8BAAST,IAAT,EAAeC,GAAf,EAAoB;AACxC,aAAKC,oBAAL,CAA0BC,SAA1B,EAAqC,CAArC,EAAwC,CAAxC;;AACA,YAAIF,GAAJ,EAAS;AACP,eAAKG,cAAL,CAAoBH,GAApB,EAAyBT,EAAE,CAACa,KAAH,CAASC,OAAT,CAAiBC,OAA1C;AACD;AACF,OA5CK;;AA8CN;;;;;;;;AAQAG,MAAAA,kBAAkB,EAAE,4BAASV,IAAT,EAAeC,GAAf,EAAoB;AACtC,aAAKC,oBAAL,CAA0BC,SAA1B,EAAqC,CAArC,EAAwC,CAAxC;;AACA,YAAIF,GAAJ,EAAS;AACP,eAAKG,cAAL,CAAoBH,GAApB,EAAyBT,EAAE,CAACa,KAAH,CAASC,OAAT,CAAiBC,OAA1C;AACD;AACF;AA3DK;AADgD,GAA1D;AApBAI,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,WAAvB,CAAmCnB,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Defines the methods all UI filterable elements should implement.\n */\nqx.Interface.define(\"qxapp.component.filter.IFilterable\", {\n  members:{\n    /**\n     * Function in charge of setting the element to a filtered state.\n     * It will usually hide it or decrease its opacity, but it could also trigger some other UI changes.\n     *\n     * @param {Object?} data The data contained in the message.\n     * @param {qx.event.message.Message?} msg Incoming message containing the data.\n     */\n    _filter: function(data, msg) {\n      this.assertArgumentsCount(arguments, 0, 2);\n      if (msg) {\n        this.assertInstance(msg, qx.event.message.Message);\n      }\n    },\n\n    /**\n     * Function in charge of removing the filtered state from the element.\n     * It will usually make it visible again, but it could also trigger some other UI changes.\n     *\n     * @param {Object?} data The data contained in the message.\n     * @param {qx.event.message.Message?} msg Incoming message containing the data.\n     */\n    _unfilter: function(data, msg) {\n      this.assertArgumentsCount(arguments, 0, 2);\n      if (msg) {\n        this.assertInstance(msg, qx.event.message.Message);\n      }\n    },\n\n    /**\n     * Function deciding if the element should react to a filter.\n     * It serves as a pre-check before the actual decision of being filtered out or not is made.\n     * For example, an element could decide not to react to a text search filter if the length of the text to search is shorter than n characters.\n     * It should check the data for all filter ids and return true if it should react to any of them.\n     *\n     * @param {Object} data The data contained in the message.\n     * @param {qx.event.message.Message?} msg Incoming message containing the data.\n     * @return {Boolean} True or false depending on whether the element should take any filter into account.\n     */\n    _shouldReactToFilter: function(data, msg) {\n      this.assertArgumentsCount(arguments, 1, 2);\n      if (msg) {\n        this.assertInstance(msg, qx.event.message.Message);\n      }\n    },\n\n    /**\n     * Function deciding if the element should be filtered out or not from the interface.\n     * It should check the data for all filter ids of its group and return true if the element qualifies to be filtered out.\n     *\n     * @param {Object} data The data contained in the message.\n     * @param {qx.event.message.Message?} msg Incoming message containing the data.\n     * @return {Boolean} True or false depending on whether the element should be switched to a filtered state.\n     */\n    _shouldApplyFilter: function(data, msg) {\n      this.assertArgumentsCount(arguments, 1, 2);\n      if (msg) {\n        this.assertInstance(msg, qx.event.message.Message);\n      }\n    }\n  }\n});\n"
+  ]
+}

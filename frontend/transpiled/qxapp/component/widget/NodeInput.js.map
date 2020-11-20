@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/widget/NodeInput.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "qxapp",
+    "component",
+    "widget",
+    "NodeInOut",
+    "construct",
+    "node",
+    "atom",
+    "getAtom",
+    "getNode",
+    "bind",
+    "members",
+    "populateNodeLayout",
+    "emptyPorts",
+    "metaData",
+    "getMetaData",
+    "_createUIPorts",
+    "outputs",
+    "NodeInput"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;;;;;;;;;;;;;AAgBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,kCAAhB,EAAoD;AAClDC,IAAAA,MAAM,EAAEC,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBC,SADmB;;AAGlD;;;AAGAC,IAAAA,SAAS,EAAE,mBAASC,IAAT,EAAe;AACxB,8DAAqBA,IAArB;AAEA,UAAMC,IAAI,GAAG,KAAKC,OAAL,EAAb;AACA,WAAKC,OAAL,GAAeC,IAAf,CAAoB,OAApB,EAA6BH,IAA7B,EAAmC,OAAnC;AACD,KAXiD;AAalDI,IAAAA,OAAO,EAAE;AACPC,MAAAA,kBAAkB,EAAE,8BAAW;AAC7B,aAAKC,UAAL;AAEA,YAAMC,QAAQ,GAAG,KAAKL,OAAL,GAAeM,WAAf,EAAjB;;AACA,aAAKC,cAAL,CAAoB,KAApB,EAA2BF,QAAQ,CAACG,OAApC;AACD;AANM;AAbyC,GAApD;AAjCAhB,EAAAA,KAAK,CAACC,SAAN,CAAgBC,MAAhB,CAAuBe,SAAvB,CAAiCrB,aAAjC,GAAiDA,aAAjD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Odei Maiz (odeimaiz)\n\n************************************************************************ */\n\n/**\n * Widget that represents an input node in a container.\n *\n * It offers Drag&Drop mechanism for connecting input nodes to inner nodes.\n *\n * *Example*\n *\n * Here is a little example of how to use the widget.\n *\n * <pre class='javascript'>\n *   let nodeInput = new qxapp.component.widget.NodeInput(node);\n *   nodeInput.populateNodeLayout();\n *   this.getRoot().add(nodeInput);\n * </pre>\n */\n\nqx.Class.define(\"qxapp.component.widget.NodeInput\", {\n  extend: qxapp.component.widget.NodeInOut,\n\n  /**\n    * @param node {qxapp.data.model.Node} Node owning the widget\n  */\n  construct: function(node) {\n    this.base(arguments, node);\n\n    const atom = this.getAtom();\n    this.getNode().bind(\"label\", atom, \"label\");\n  },\n\n  members: {\n    populateNodeLayout: function() {\n      this.emptyPorts();\n\n      const metaData = this.getNode().getMetaData();\n      this._createUIPorts(false, metaData.outputs);\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/ui/toolbar/SelectBox.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "form",
+    "SelectBox",
+    "construct",
+    "properties",
+    "appearance",
+    "refine",
+    "init",
+    "members",
+    "_applyVisibility",
+    "value",
+    "old",
+    "parent",
+    "getLayoutParent",
+    "toolbar",
+    "PartContainer",
+    "core",
+    "queue",
+    "Appearance",
+    "add",
+    "qxapp"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4BAAhB,EAA8C;AAC5CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,SADyB;AAG5CC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACD,KAL2C;AAO5CC,IAAAA,UAAU,EAAE;AACVC,MAAAA,UAAU,EAAE;AACVC,QAAAA,MAAM,EAAE,IADE;AAEVC,QAAAA,IAAI,EAAE;AAFI;AADF,KAPgC;AAc5CC,IAAAA,OAAO,EAAG;AACR;AACAC,MAAAA,gBAAgB,EAAG,0BAASC,KAAT,EAAgBC,GAAhB,EAAqB;AACtC,8EAAqBD,KAArB,EAA4BC,GAA5B,EADsC,CAEtC;;;AACA,YAAIC,MAAM,GAAG,KAAKC,eAAL,EAAb;;AACA,YAAID,MAAM,IAAIA,MAAM,YAAYnB,EAAE,CAACO,EAAH,CAAMc,OAAN,CAAcC,aAA9C,EAA6D;AAC3DtB,UAAAA,EAAE,CAACO,EAAH,CAAMgB,IAAN,CAAWC,KAAX,CAAiBC,UAAjB,CAA4BC,GAA5B,CAAgCP,MAAhC;AACD;AACF;AATO;AAdkC,GAA9C;AApBAQ,EAAAA,KAAK,CAACpB,EAAN,CAASc,OAAT,CAAiBZ,SAAjB,CAA2BN,aAA3B,GAA2CA,aAA3C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * SelectBox with its padding and margins adapted to be show inside a qx.ui.toolbar.ToolBar.\n */\nqx.Class.define(\"qxapp.ui.toolbar.SelectBox\", {\n  extend: qx.ui.form.SelectBox,\n\n  construct: function() {\n    this.base(arguments);\n  },\n\n  properties: {\n    appearance: {\n      refine: true,\n      init: \"toolbar-selectbox\"\n    }\n  },\n\n  members : {\n    // overridden\n    _applyVisibility : function(value, old) {\n      this.base(arguments, value, old);\n      // trigger a appearance recalculation of the parent\n      var parent = this.getLayoutParent();\n      if (parent && parent instanceof qx.ui.toolbar.PartContainer) {\n        qx.ui.core.queue.Appearance.add(parent);\n      }\n    }\n  }\n});\n"
+  ]
+}

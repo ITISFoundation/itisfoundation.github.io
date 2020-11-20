@@ -1,0 +1,89 @@
+{
+  "className": "qxapp.statics.NodeStatics",
+  "packageName": "qxapp.statics",
+  "name": "NodeStatics",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 8,
+        "column": 0
+      },
+      "end": {
+        "line": 57,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "oSPARC - The SIMCORE frontend - https:\nCopyright: 2019 IT'IS Foundation - https:\nLicense: MIT - https:\nAuthors: Ignacio Pascual (ignapas)"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "statics": {
+    "CATEGORIES": {
+      "location": {
+        "start": {
+          "line": 10,
+          "column": 4
+        },
+        "end": {
+          "line": 35,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "TYPES": {
+      "location": {
+        "start": {
+          "line": 36,
+          "column": 4
+        },
+        "end": {
+          "line": 49,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "getCategory": {
+      "location": {
+        "start": {
+          "line": 50,
+          "column": 4
+        },
+        "end": {
+          "line": 52,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getType": {
+      "location": {
+        "start": {
+          "line": 53,
+          "column": 4
+        },
+        "end": {
+          "line": 55,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

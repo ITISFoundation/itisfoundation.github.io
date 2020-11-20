@@ -1,0 +1,70 @@
+{
+  "className": "qxapp.dev.fake.modeler.Data",
+  "packageName": "qxapp.dev.fake.modeler",
+  "name": "Data",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 812,
+        "column": 3
+      }
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "itemList": {
+      "location": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 790,
+          "column": 5
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "compare": {
+      "location": {
+        "start": {
+          "line": 792,
+          "column": 4
+        },
+        "end": {
+          "line": 800,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getItemList": {
+      "location": {
+        "start": {
+          "line": 802,
+          "column": 4
+        },
+        "end": {
+          "line": 809,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

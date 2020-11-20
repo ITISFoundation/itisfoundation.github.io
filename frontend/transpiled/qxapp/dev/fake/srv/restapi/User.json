@@ -1,0 +1,54 @@
+{
+  "className": "qxapp.dev.fake.srv.restapi.User",
+  "packageName": "qxapp.dev.fake.srv.restapi",
+  "name": "User",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 50,
+        "column": 3
+      }
+    }
+  },
+  "type": "class",
+  "isAbstract": false,
+  "isStatic": true,
+  "isSingleton": false,
+  "statics": {
+    "mockData": {
+      "location": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 40,
+          "column": 6
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    }
+  },
+  "defer": {
+    "location": {
+      "start": {
+        "line": 43,
+        "column": 9
+      },
+      "end": {
+        "line": 48,
+        "column": 3
+      }
+    }
+  },
+  "descendants": []
+}

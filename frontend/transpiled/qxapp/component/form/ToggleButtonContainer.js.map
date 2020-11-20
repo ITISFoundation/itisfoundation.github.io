@@ -1,0 +1,49 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/component/form/ToggleButtonContainer.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "container",
+    "Composite",
+    "construct",
+    "layout",
+    "events",
+    "changeSelection",
+    "members",
+    "add",
+    "child",
+    "options",
+    "form",
+    "ToggleButton",
+    "addListener",
+    "e",
+    "fireDataEvent",
+    "getSelection",
+    "console",
+    "error",
+    "resetSelection",
+    "getChildren",
+    "map",
+    "button",
+    "setValue",
+    "filter",
+    "getValue",
+    "selectOne",
+    "qxapp",
+    "component",
+    "ToggleButtonContainer"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;AAOA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4CAAhB,EAA8D;AAC5DC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,SADoC;AAG5DC,IAAAA,SAAS,EAAE,mBAASC,MAAT,EAAiB;AAC1B,uDAAqBA,MAArB;AACD,KAL2D;AAO5DC,IAAAA,MAAM,EAAE;AACNC,MAAAA,eAAe,EAAE;AADX,KAPoD;AAW5DC,IAAAA,OAAO,EAAE;AACP;AACAC,MAAAA,GAAG,EAAE,aAASC,KAAT,EAAgBC,OAAhB,EAAyB;AAAA;;AAC5B,YAAID,KAAK,YAAYhB,EAAE,CAACO,EAAH,CAAMW,IAAN,CAAWC,YAAhC,EAA8C;AAC5C,mFAAqBH,KAArB,EAA4BC,OAA5B;AACAD,UAAAA,KAAK,CAACI,WAAN,CAAkB,aAAlB,EAAiC,UAAAC,CAAC,EAAI;AACpC,YAAA,KAAI,CAACC,aAAL,CAAmB,iBAAnB,EAAsC,KAAI,CAACC,YAAL,EAAtC;AACD,WAFD,EAEG,IAFH;AAGD,SALD,MAKO;AACLC,UAAAA,OAAO,CAACC,KAAR,CAAc,iEAAd;AACD;AACF,OAXM;;AAaP;;;AAGAC,MAAAA,cAAc,EAAE,0BAAW;AACzB,aAAKC,WAAL,GAAmBC,GAAnB,CAAuB,UAAAC,MAAM;AAAA,iBAAIA,MAAM,CAACC,QAAP,CAAgB,KAAhB,CAAJ;AAAA,SAA7B;AACD,OAlBM;;AAoBP;;;AAGAP,MAAAA,YAAY,EAAE,wBAAW;AACvB,eAAO,KAAKI,WAAL,GAAmBI,MAAnB,CAA0B,UAAAF,MAAM;AAAA,iBAAIA,MAAM,CAACG,QAAP,EAAJ;AAAA,SAAhC,CAAP;AACD,OAzBM;;AA2BP;;;;;AAKAC,MAAAA,SAAS,EAAE,mBAASjB,KAAT,EAAgB;AACzB,aAAKW,WAAL,GAAmBC,GAAnB,CAAuB,UAAAC,MAAM;AAAA,iBAAIA,MAAM,CAACC,QAAP,CAAgBD,MAAM,KAAKb,KAA3B,CAAJ;AAAA,SAA7B;AACD;AAlCM;AAXmD,GAA9D;AAVAkB,EAAAA,KAAK,CAACC,SAAN,CAAgBjB,IAAhB,CAAqBkB,qBAArB,CAA2CjC,aAA3C,GAA2DA,aAA3D",
+  "sourcesContent": [
+    "/*\n * oSPARC - The SIMCORE frontend - https://osparc.io\n * Copyright: 2019 IT'IS Foundation - https://itis.swiss\n * License: MIT - https://opensource.org/licenses/MIT\n * Authors: Ignacio Pascual (ignapas)\n */\n\n/**\n * Container for StudyBrowserListItems or any other ToggleButtons, with some convenient methods.\n */\nqx.Class.define(\"qxapp.component.form.ToggleButtonContainer\", {\n  extend: qx.ui.container.Composite,\n\n  construct: function(layout) {\n    this.base(arguments, layout);\n  },\n\n  events: {\n    changeSelection: \"qx.event.type.Data\"\n  },\n\n  members: {\n    // overriden\n    add: function(child, options) {\n      if (child instanceof qx.ui.form.ToggleButton) {\n        this.base(arguments, child, options);\n        child.addListener(\"changeValue\", e => {\n          this.fireDataEvent(\"changeSelection\", this.getSelection());\n        }, this);\n      } else {\n        console.error(\"ToggleButtonContainer only allows ToggleButton as its children.\");\n      }\n    },\n\n    /**\n     * Resets the selection so no toggle button is checked.\n     */\n    resetSelection: function() {\n      this.getChildren().map(button => button.setValue(false));\n    },\n\n    /**\n     * Returns an array that contains all buttons that are checked.\n     */\n    getSelection: function() {\n      return this.getChildren().filter(button => button.getValue());\n    },\n\n    /**\n     * Sets the given button's value to true (checks it) and unchecks all other buttons. If the given button is not present,\n     * every button in the container will get a false value (unchecked).\n     * @param {qx.ui.form.ToggleButton} child Button that will be checked\n     */\n    selectOne: function(child) {\n      this.getChildren().map(button => button.setValue(button === child));\n    }\n  }\n});\n"
+  ]
+}

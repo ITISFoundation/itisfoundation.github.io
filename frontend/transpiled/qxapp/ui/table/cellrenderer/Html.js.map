@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/osparc-simcore/services/web/client/source/class/qxapp/ui/table/cellrenderer/Html.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "table",
+    "cellrenderer",
+    "Html",
+    "construct",
+    "members",
+    "_getCellStyle",
+    "cellInfo",
+    "baseStyle",
+    "cellStyle",
+    "style",
+    "qxapp"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,kCAAhB,EAAoD;AAClDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,KAAN,CAAYC,YAAZ,CAAyBC,IADiB;AAElDC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACD,KAJiD;AAKlDC,IAAAA,OAAO,EAAE;AACP;AACAC,MAAAA,aAAa,EAAE,uBAASC,QAAT,EAAmB;AAChC,YAAMC,SAAS,GAAG,yEAAqBD,QAArB,KAAkC,EAApD;AACA,YAAME,SAAS,GAAGF,QAAQ,CAACG,KAAT,IAAkB,EAApC;AACA,eAAOF,SAAS,GAAGC,SAAnB;AACD;AANM;AALyC,GAApD;AApBAE,EAAAA,KAAK,CAACX,EAAN,CAASC,KAAT,CAAeC,YAAf,CAA4BC,IAA5B,CAAiCP,aAAjC,GAAiDA,aAAjD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qxapp - the simcore frontend\n\n   https://osparc.io\n\n   Copyright:\n     2019 IT'IS Foundation, https://itis.swiss\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n\n   Authors:\n     * Ignacio Pascual (ignapas)\n\n************************************************************************ */\n\n/**\n * Html cell renderer that does not override the cell styles.\n */\nqx.Class.define(\"qxapp.ui.table.cellrenderer.Html\", {\n  extend: qx.ui.table.cellrenderer.Html,\n  construct: function() {\n    this.base(arguments);\n  },\n  members: {\n    // Override\n    _getCellStyle: function(cellInfo) {\n      const baseStyle = this.base(arguments, cellInfo) || \"\";\n      const cellStyle = cellInfo.style || \"\";\n      return baseStyle + cellStyle;\n    }\n  }\n});\n"
+  ]
+}
